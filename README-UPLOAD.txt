@@ -1,27 +1,15 @@
-HOSPRO WEBSITE (9 pages) — hospro-website repo -> hospro.co.uk
-================================================================
-Upload EVERYTHING (including the img/ folder) to:
-  github.com/orngroup/hospro-website
-Then: Settings > Pages > Custom domain = hospro.co.uk
+HOSPRO / ENTITY — private JV prospectus mini-site
+=================================================
+Upload the whole "entity" folder (index.html, img/, the PDF, this file) into the
+root of the hospro-website repo so it sits beside index.html, shared.css etc.
+It will then be live at:  https://hospro.co.uk/entity/
 
-PAGES
-  index.html         Home (professional experts positioning)
-  platform.html      Platform + charts
-  solutions.html     Commercial / ops / maintenance / procurement / AI
-  integrations.html  PMS list + data table
-  training.html      Leadership & staff training
-  services.html      Managed services — 6 services (NEW)
-  consultancy.html   Hotel operating consultancy
-  about.html         About / experience
-  contact.html       Contact + demo form
-SUPPORT
-  shared.css         Styles (all pages need this)
-  logo-full.svg      Logo (colour) - nav
-  logo-white.svg     Logo (white) - footer
-  mark-colour.svg    H-mark (spare)
-  img/               Real hotel photos (self-hosted, no watermark)
-  CNAME              hospro.co.uk
-
-UPLOAD TIP: To keep the img/ folder structure, either drag the whole
-folder in, or create the img folder in GitHub first then upload the
-photos into it. All buttons now say "Speak to HOSPRO".
+- Access code: 3132 (set in index.html, search for const CODE). The check is
+  client-side only — it keeps casual visitors out, it is not security.
+  Anyone who views the page source can read the content. Do not put anything
+  on this page you would not send by email.
+- The page is self-contained (one index.html + img/). It does not link to or
+  from the public site, and carries noindex/nofollow so search engines ignore it.
+- Tabs are bookmarkable: /entity/#ai, /entity/#partnership, etc.
+- To change the code, text or images: edit index.html directly, or ask for a
+  rebuild from the brochure source.
