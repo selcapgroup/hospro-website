@@ -192,11 +192,67 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 .toc li a{color:#1F3864;text-decoration:none;font-weight:600}
 .toc li a:hover{color:#20b2a2}
 tr.hide{display:none}
+/* ===== uniform type scale ===== */
+body,.sec,p,li,td,th,label,input,textarea,button{font-family:Manrope,Aptos,"Segoe UI",Arial,sans-serif}
+svg text,svg tspan{font-family:Manrope,Aptos,"Segoe UI",Arial,sans-serif!important}
+.sec{padding:40px 44px;margin-bottom:28px}
+.sec h1{font-size:34px;line-height:1.15;margin:4px 0 14px;letter-spacing:-.4px}
+.sec h2{font-size:26px;margin:28px 0 10px}
+.sec h3{font-size:20px;margin:28px 0 10px}
+.sec h4,.card h4{font-size:17px;margin:0 0 6px}
+.sec p,.sec li{font-size:16px;line-height:1.65}
+.sec .lead{font-size:19px;line-height:1.55}
+.sec .note,.sec .cap,figcaption{font-size:13.5px;line-height:1.5}
+.card p,.card li{font-size:15px;line-height:1.6}
+table{font-size:14.5px}th{font-size:13.5px;padding:10px 12px}td{padding:9px 12px;line-height:1.5}
+table.tight,table.tight td,table.tight th{font-size:14.5px}
+.stat .n{font-size:32px}.stat .l{font-size:13px}
+.kicker{font-size:12.5px;margin-bottom:6px}
+.quote{font-size:18px;line-height:1.5;padding:12px 18px}
+ul{margin:0 0 12px 20px}li{margin:0 0 6px}
+.two,.three,.four{gap:18px;margin:16px 0}
+.card{padding:16px 18px;border-radius:12px}
+.stat{padding:14px 16px}
+.pill{font-size:13px}
+/* ===== diagrams: fit the column, never clip ===== */
+.svgwrap{padding:22px 18px 16px;margin:14px 0 6px;overflow:visible;border-radius:14px}
+.svgwrap svg{min-width:0!important;width:100%!important;max-width:1040px;height:auto;display:block;margin:0 auto}
+.two .svgwrap svg,.three .svgwrap svg{max-width:100%}
+.svgwrap .enl{top:8px;right:8px}
+.three .svgwrap svg[viewBox="0 0 230 360"]{max-width:280px}
+.three .svgwrap:has(svg[viewBox="0 0 230 360"]){padding:0;overflow:hidden;background:#f6f8fa;display:flex;justify-content:center}
+@media(max-width:980px){.two,.three,.four{grid-template-columns:1fr}}
+.cap{margin:6px 0 22px}
+/* ===== photos: full image, bounded size ===== */
+.photo{margin:26px auto 0;max-width:980px;background:#eef2f6}
+.photo img{width:100%;height:auto;max-height:560px;object-fit:contain;display:block}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:10px 0 18px}
+@media(max-width:980px){.gallery{grid-template-columns:1fr}}
+.gallery figure{margin:0;border:1px solid #dde5e6;border-radius:12px;overflow:hidden;background:#fff}
+.gallery img{width:100%;height:220px;object-fit:cover;object-position:top;display:block;cursor:zoom-in}
+.gallery figcaption{padding:8px 12px;font-size:13px;color:#5a6b78}
+/* ===== header & navigation ===== */
+header.top .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px;min-height:64px;padding:6px 24px}
+header.top img{height:28px}
+.topnav{justify-content:center}
+.tab{font-size:13.5px;padding:8px 10px}
+.topnav{flex-wrap:nowrap;overflow-x:auto}
+.wrap{max-width:1240px}
+.lock{font-size:11.5px;letter-spacing:.1em;color:#5a6b78;font-weight:800}
+.subnav{top:0}
+.subnav .wrap{padding:9px 24px}
+.subnav a{font-size:13.5px;padding:8px 12px}
+.hero{padding:44px 0 40px}
+.hero h1{font-size:46px}
+.hero-sub{font-size:18px}
+@media(max-width:900px){header.top .wrap{grid-template-columns:1fr auto}.topnav{grid-column:1/-1;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}.hero h1{font-size:32px}.sec{padding:24px 18px}.sec h1{font-size:28px}}
 </style>
 </head>
 <body>
 <div id="gate"><form class="box" id="gate-form"><img src="img/logo.png" alt="HosPRO"><h2>Private prospectus</h2><p>This page is for invited readers. Enter the access code to continue.</p><input id="code" type="password" inputmode="numeric" maxlength="6" autocomplete="off" placeholder="••••"><div class="err" id="gate-err"></div><button class="btn primary" type="submit">Enter</button></form></div>
-<header class="top"><div class="wrap"><a href="#overview" class="logo"><img src="img/logo.png" alt="HosPRO"></a><nav class="topnav"><a class="tab" data-tab="overview" href="#overview">Overview</a><a class="tab" data-tab="opportunity" href="#opportunity">Opportunity</a><a class="tab" data-tab="platform" href="#platform">Platform</a><a class="tab" data-tab="connected" href="#connected">Connected</a><a class="tab" data-tab="business" href="#business">Business case</a><a class="tab" data-tab="technology" href="#technology">Technology</a><a class="tab" data-tab="revenue" href="#revenue">Revenue & growth</a><a class="tab" data-tab="ai" href="#ai">AI</a><a class="tab" data-tab="partnership" href="#partnership">Partnership</a></nav><span class="lock">PRIVATE</span></div></header>
+<header class="top"><div class="wrap"><a href="#overview" class="logo"><img src="img/logo.png" alt="HosPRO"></a><nav class="topnav"><a class="tab" data-tab="overview" href="#overview">Overview</a><a class="tab" data-tab="opportunity" href="#opportunity">Opportunity</a><a class="tab" data-tab="platform" href="#platform">Platform</a><a class="tab" data-tab="connected" href="#connected">Connected</a><a class="tab" data-tab="business" href="#business">Business case</a><a class="tab" data-tab="technology" href="#technology">Technology</a><a class="tab" data-tab="revenue" href="#revenue">Revenue</a><a class="tab" data-tab="ai" href="#ai">AI</a><a class="tab" data-tab="partnership" href="#partnership">Partnership</a></nav><span class="lock">PRIVATE</span></div></header>
+
+<div class="subnav"><div class="wrap" id="subnav"></div></div>
 
 <section class="hero">
   <div class="hero-in">
@@ -214,8 +270,6 @@ tr.hide{display:none}
     <div class="btnrow"><a class="btn primary" href="#" data-go="opportunity">Start reading →</a><a class="btn" href="#" data-go="discuss">Send us your discussion points</a><a class="btn" href="HosPRO-JV-Prospectus.pdf" target="_blank">PDF edition (earlier version)</a></div>
   </div>
 </section>
-
-<div class="subnav"><div class="wrap" id="subnav"></div></div>
 <main><div class="wrap"><article class="sec pg" id="pg-executive-summary" data-tab="overview"><div class="kicker">Overview</div>
   <h1>Executive summary</h1>
   <p class="lead">HosPRO is a hotel operating platform we are developing inside live hotels, designed by people who own and run hotels. It replaces WhatsApp, printouts and seven disconnected systems with one connected layer that every department uses on their phone — and gives the general manager one live picture of the whole property.</p>
@@ -332,7 +386,7 @@ tr.hide{display:none}
   </div>
   <div class="quote" style="margin-top:12px">The sequence matters: operations first (adoption and data), revenue second (margin), growth third (top line), intelligence throughout. That is the order a hotel feels the benefit — and the order the roadmap in the Partnership tab follows.</div>
   <h3>What we are not trying to be</h3>
-  <p style="font-size:10pt">We are not building a PMS, a channel manager or a booking engine; those exist and integrate well. We are not building a generic chatbot. We are building the operating layer that sits around the PMS and makes every department, and eventually every rate decision, measurably better — then licensing it to the thousands of hotels that look like ours.</p>
+  <p>We are not building a PMS, a channel manager or a booking engine; those exist and integrate well. We are not building a generic chatbot. We are building the operating layer that sits around the PMS and makes every department, and eventually every rate decision, measurably better — then licensing it to the thousands of hotels that look like ours.</p>
 
   </article><article class="sec pg" id="pg-how-an-independent-hotel-actually-runs-today" data-tab="platform"><div class="kicker">3 · The problem</div>
   <h1>How an independent hotel actually runs today</h1>
@@ -786,7 +840,7 @@ tr.hide{display:none}
         <div class="stat"><div class="n">0 re-keys</div><div class="l">figures entered once, used everywhere</div></div>
       </div>
       <h3 style="margin-top:10px">Why it compounds</h3>
-      <p style="font-size:10pt">Each module makes the next cheaper: housekeeping already knows the rooms, maintenance already knows the fixers, reception already knows today's arrivals. By the tenth module the marginal cost of a new department is a configuration file. And every month of operation adds data that makes the AI layer more accurate for that hotel.</p>
+      <p>Each module makes the next cheaper: housekeeping already knows the rooms, maintenance already knows the fixers, reception already knows today's arrivals. By the tenth module the marginal cost of a new department is a configuration file. And every month of operation adds data that makes the AI layer more accurate for that hotel.</p>
     </div>
   </div>
   
@@ -838,10 +892,18 @@ tr.hide{display:none}
   </article><article class="sec pg" id="pg-what-exists-today-the-code-how-it-is-built-and-the-practices" data-tab="technology"><div class="kicker">9 · Technical architecture</div>
   <h1>What exists today: the code, how it is built, and the practices behind it</h1>
   <p>A plain account of the current codebase for a partner's engineers. It is deliberately simple, works every day in two hotels, and was built for speed of change rather than scale. Its strengths and its limits are both listed.</p>
-  <div class="two">
+  
+<h3>Screens from the live system</h3>
+<p class="note">HosDESK at Brandon Hall — the reception board and two of its cards, as used today. Click to enlarge.</p>
+<div class="gallery">
+  <figure><img src="img/hosdesk-cards.jpg" alt="HosDESK card board" data-light loading="lazy"><figcaption>HosDESK board: guest requests, deliveries, maintenance, shift handover, room check, staff directory, TV audit</figcaption></figure>
+  <figure><img src="img/hosdesk-requests.jpg" alt="Guest requests" data-light loading="lazy"><figcaption>Guest requests with to-do / urgent / in-progress / done filters and a period picker</figcaption></figure>
+  <figure><img src="img/hosdesk-deliveries.jpg" alt="Deliveries" data-light loading="lazy"><figcaption>Deliveries: supplier, goods, size, who it is for, where left — date and time recorded automatically</figcaption></figure>
+</div>
+<div class="two">
     <div>
       <h3 style="margin-top:0">Stack as it stands</h3>
-      <table class="tight">
+      <table>
         <tr><th>Layer</th><th>What we use</th></tr>
         <tr><td>Front end</td><td>Hand-written HTML/CSS/JS — no framework; one shell (`app.html`) with per-department modules (`app/core.js`, `mod-house.js`, `mod-fix.js`, `mod-rec.js`, `mod-fb.js`, `mod-sales.js`, `mod-misc.js`, `mod-manage.js`); desktop portal (`index.html`, `app.js`, `data.js`)</td></tr>
         <tr><td>Install &amp; offline</td><td>PWA: manifests per department, network-first service worker, add-to-home-screen icons; installed in under a minute, no app store</td></tr>
@@ -885,7 +947,7 @@ tr.hide{display:none}
     <g fill="#1F3864" font-weight="700" font-size="9"><text x="380" y="62" text-anchor="middle">platform engineering</text><text x="380" y="142" text-anchor="middle">security &amp; operations</text><text x="380" y="222" text-anchor="middle">commercial operations</text></g>
   </svg></div>
   <div class="cap">Figure N · The gap between a system that runs our hotels and a product that runs anyone's</div>
-  <table class="tight">
+  <table>
     <tr><th style="width:22%">Area</th><th>What a commercial platform needs</th><th style="width:22%">Who provides it in the JV</th></tr>
     <tr><td>Identity &amp; security</td><td>Real authentication with role claims, per-tenant data isolation, encrypted backups, penetration testing, GDPR data-processing agreement, data residency (UK/EU)</td><td>Partner platform (built in)</td></tr>
     <tr><td>Multi-tenancy</td><td>One codebase serving many hotels; tenant id on every record; configuration, branding and rules per property; estate-level benchmarks anonymised</td><td>Partner + HosPRO data model</td></tr>
@@ -1149,7 +1211,7 @@ tr.hide{display:none}
     </div>
     <div>
       <h3>What AI adds (JV scope)</h3>
-      <ul style="font-size:10pt">
+      <ul>
         <li><b>Triage from a photo and a sentence</b> — work type, priority, likely parts, the right fixer, and whether the room is sold tonight.</li>
         <li><b>Predictive maintenance</b> — recurring faults per room and asset (boilers, showers, locks, fridges) scheduled before they fail; seasonal patterns learned per property.</li>
         <li><b>Contractor decision support</b> — "this is a £12 in-house job" vs "call the gas engineer"; approval requests drafted with the evidence attached.</li>
@@ -1199,7 +1261,7 @@ tr.hide{display:none}
   <h1>Rates vs competitors: where HosREV sits in the market <button class="aichip" data-ai="The differentiator: HosPRO·AI prices with operational truth (rooms out of order, group holds, events) that no stand-alone RMS can see.">HosPRO·AI</button></h1>
 
   <p>Automated revenue management for independents is a proven category with real results — which is why it belongs in the JV. Two leading AI pricing tools show what the market expects and pays for; HosREV adds the one input none of them have.</p>
-  <table class="tight">
+  <table>
     <tr><th style="width:16%"></th><th style="width:27%">Pricepoint</th><th style="width:27%">RoomPriceGenie</th><th>HosREV (HosPRO)</th></tr>
     <tr><td><b>Positioning</b></td><td>"AI revenue agent" pricing rooms continuously from bookings, cancellations and demand</td><td>Automated revenue management for independents; "trusted by over 5,000 hotels"</td><td>Revenue management inside the hotel's operating platform — rate decisions aware of what is happening in the building</td></tr>
     <tr><td><b>Core inputs</b></td><td>Pick-up, demand forecast (ForecastIQ), event detection, market signals; competitor rates optional</td><td>Availability, occupancy trends, competitor rates, market demand</td><td>PMS pick-up, comp-set within 20 miles, events, own history <b>plus</b> rooms out of order, group holds from sales, F&amp;B and events calendar</td></tr>
@@ -1287,7 +1349,7 @@ tr.hide{display:none}
   </svg></div>
   <div class="cap">Figure L · From rules to models — and the rule that governs every model we add</div>
   <h3>The AI we are looking to add, model by model</h3>
-  <table class="tight">
+  <table>
     <tr><th style="width:17%">Capability</th><th style="width:16%">Model type</th><th>Trained on (data we already hold)</th><th style="width:17%">Sits in</th><th style="width:14%">Human approval</th></tr>
     <tr><td>Fault triage</td><td>Vision + text classifier</td><td>Job photos, descriptions, work types, outcomes, parts used</td><td>HosFIX intake</td><td>Fixer / manager accepts</td></tr>
     <tr><td>Predictive maintenance</td><td>Time-series per asset / room</td><td>Repeat faults by location, season, asset age, fix history</td><td>HosFIX scheduler</td><td>Manager schedules</td></tr>
@@ -1363,7 +1425,7 @@ tr.hide{display:none}
   </svg></div>
   <div class="cap">Figure 11 · The intelligence stack — each layer is built on the one beneath it and is useful on its own</div>
   <div class="btnrow" id="ai-filter"><span class="note">Filter by module:</span></div><h3>Ten AI use cases, each tied to a module and a measurable outcome</h3>
-  <table class="tight">
+  <table>
     <tr><th style="width:24%">Use case</th><th>What it does</th><th style="width:22%">Module</th><th style="width:22%">Outcome</th></tr>
     <tr><td>Demand forecasting</td><td>Per-night occupancy forecast from pick-up, comp-set, events, history</td><td>HosREV</td><td>RevPAR +2–4%</td></tr>
     <tr><td>Rate explanation &amp; auto-approve</td><td>Plain-English "why", confidence score, auto-push inside guard-rails</td><td>HosREV</td><td>Revenue manager time ↓</td></tr>
@@ -1548,22 +1610,22 @@ tr.hide{display:none}
   <div class="two">
     <div>
       <h3 style="margin-top:0">Market</h3>
-      <p style="font-size:10pt">Thousands of UK independent hotels, inns, spa hotels and wedding venues sit between 20 and 200 rooms, most running a PMS plus WhatsApp. The buyer's guide segments them as boutiques and independents (20–100 rooms, high-touch, medium complexity) and mid-size properties with departmental silos — precisely where HosPRO is already proven. Groups of three to twenty properties and hotel consultancies are a natural channel, and the model travels to Europe and the Gulf, where the same owner-operator pattern dominates.</p>
+      <p>Thousands of UK independent hotels, inns, spa hotels and wedding venues sit between 20 and 200 rooms, most running a PMS plus WhatsApp. The buyer's guide segments them as boutiques and independents (20–100 rooms, high-touch, medium complexity) and mid-size properties with departmental silos — precisely where HosPRO is already proven. Groups of three to twenty properties and hotel consultancies are a natural channel, and the model travels to Europe and the Gulf, where the same owner-operator pattern dominates.</p>
       <h3>Pricing model (proposed)</h3>
-      <p style="font-size:10pt">Per-property subscription by room band with the operating modules bundled; an intelligence tier (HosREV autopilot, agents, concierge) on top; onboarding and consultancy delivered by HosPRO. Comparable AI pricing tools alone charge independents a per-property subscription and show double-digit revenue uplifts; HosPRO bundles that with the operations layer. A 120-room hotel paying a few hundred pounds a month against a six-figure annual benefit is an easy conversation.</p>
+      <p>Per-property subscription by room band with the operating modules bundled; an intelligence tier (HosREV autopilot, agents, concierge) on top; onboarding and consultancy delivered by HosPRO. Comparable AI pricing tools alone charge independents a per-property subscription and show double-digit revenue uplifts; HosPRO bundles that with the operations layer. A 120-room hotel paying a few hundred pounds a month against a six-figure annual benefit is an easy conversation.</p>
       <h3>Unit economics to prove in the pilot</h3>
-      <ul style="font-size:10pt"><li>Onboarding cost per property (target: one day, one person)</li><li>Hosting cost per property (today: tens of pounds a month)</li><li>Measured benefit per property across the seven levers</li><li>Payback period (target: under three months)</li></ul>
+      <ul><li>Onboarding cost per property (target: one day, one person)</li><li>Hosting cost per property (today: tens of pounds a month)</li><li>Measured benefit per property across the seven levers</li><li>Payback period (target: under three months)</li></ul>
     </div>
     <div>
       <h3 style="margin-top:0">What we are asking of a partner</h3>
-      <ul style="font-size:10pt">
+      <ul>
         <li>Engineering ownership of the platform layer: auth, multi-tenancy, deployment, observability.</li>
         <li>AI and agent capability: models, forecasting, triage, voice, with human approval built in.</li>
         <li>A joint product roadmap and shared IP in the intelligence layer; HosPRO retains the hospitality domain, brand and customer relationships.</li>
         <li>A commercial structure that rewards both parties on recurring revenue per property.</li>
       </ul>
       <h3>What we commit</h3>
-      <ul style="font-size:10pt">
+      <ul>
         <li>Two live properties as build-and-measure sites from day one.</li>
         <li>Full access to the current codebase, data model and operating workflows.</li>
         <li>Product, domain and go-to-market leadership; onboarding and training delivery.</li>
@@ -1575,7 +1637,7 @@ tr.hide{display:none}
 
   </article><article class="sec pg" id="pg-in-short-and-what-happens-next" data-tab="partnership"><div class="kicker">19 · Next steps</div>
   <h1>In short — and what happens next</h1>
-  <div class="quote" style="font-size:12pt">HosPRO is the rare thing in hospitality technology: a connected operating platform that already runs real hotels, built on common sense by the people who run them. Add a serious AI and engineering partner and it becomes the operating system for the independent-hotel market.</div>
+  <div class="quote">HosPRO is the rare thing in hospitality technology: a connected operating platform that already runs real hotels, built on common sense by the people who run them. Add a serious AI and engineering partner and it becomes the operating system for the independent-hotel market.</div>
   <div class="two" style="margin-top:12px">
     <div class="card tint">
       <h4>Why now</h4>
@@ -1589,7 +1651,7 @@ tr.hide{display:none}
     </div>
     <div class="card tint">
       <h4>Proposed first conversation</h4>
-      <ol style="margin-left:16px;font-size:9.5pt">
+      <ol style="margin-left:16px;">
         <li>Walk-through of the live platform at Brandon Hall (on site or screen-share) and a look at the data model.</li>
         <li>Partner review of the codebase and the Ada Engine fit; agree the months 1–2 scope (fault triage, allocation, morning brief, auth).</li>
         <li>Outline JV terms: roles, IP in the intelligence layer, revenue share per property, governance.</li>
@@ -1614,7 +1676,7 @@ tr.hide{display:none}
       <rect x="580" y="20" width="170" height="80" rx="10" fill="#EA7A1E"/><text x="665" y="48" text-anchor="middle" fill="#fff" font-weight="700" font-size="11">READY FOR AI</text><text x="665" y="68" text-anchor="middle" fill="#fff">with the right partner</text><text x="665" y="84" text-anchor="middle" fill="#fff" font-size="9">Ada Engine fit</text>
     </g>
   </svg></div>
-  <div style="margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:10pt">
+  <div style="margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:12px;">
     <div><div class="kicker">Contact</div><b>Ajay Kawa</b><br>HosPRO · 17 Hanover Square, London W1S 1BN<br><b>hospro.co.uk</b></div>
     <div><div class="kicker">Live references</div>Brandon Hall Hotel &amp; Spa — brandon.hospro.co.uk<br>The Barn Hotel, Ruislip — thebarnhotel.hospro.co.uk<br><span class="note">Demonstrations available on request. Figures in the business case are illustrative and will be calibrated with each property.</span></div>
   </div>
@@ -1654,7 +1716,7 @@ document.getElementById('gate-form').addEventListener('submit',e=>{e.preventDefa
 inp.focus();
 
 // routing: one page per section
-const NAV=[{"tab": "overview", "id": "executive-summary", "title": "Executive summary"}, {"tab": "overview", "id": "designed-by-people-who-own-and-run-hotels", "title": "Designed by people who own and run hotels"}, {"tab": "opportunity", "id": "independent-hotels-are-desperate-for-three-things", "title": "Independent hotels are desperate for three things"}, {"tab": "opportunity", "id": "why-this-why-us-why-now", "title": "Why this, why us, why now"}, {"tab": "platform", "id": "how-an-independent-hotel-actually-runs-today", "title": "How an independent hotel actually runs today"}, {"tab": "platform", "id": "common-sense-systems-the-six-principles", "title": "Common-sense systems: the six principles"}, {"tab": "platform", "id": "one-app-one-database-every-department", "title": "One app, one database, every department"}, {"tab": "platform", "id": "what-is-built-module-by-module", "title": "What is built \u2014 module by module"}, {"tab": "platform", "id": "what-is-built-module-by-module-continued", "title": "What is built \u2014 module by module (continued)"}, {"tab": "connected", "id": "one-action-everywhere-the-life-of-a-fault", "title": "One action, everywhere: the life of a fault"}, {"tab": "connected", "id": "how-departments-and-modules-interact", "title": "How departments and modules interact"}, {"tab": "connected", "id": "information-flow-from-a-tap-on-a-phone-to-the-owner-s-report", "title": "Information flow: from a tap on a phone to the owner's report"}, {"tab": "connected", "id": "how-the-people-connect-before-and-after", "title": "How the people connect: before and after"}, {"tab": "connected", "id": "a-day-in-a-hospro-hotel", "title": "A day in a HosPRO hotel"}, {"tab": "business", "id": "where-the-efficiency-savings-and-profit-come-from", "title": "Where the efficiency, savings and profit come from"}, {"tab": "technology", "id": "system-architecture-as-built", "title": "System architecture as built"}, {"tab": "technology", "id": "what-exists-today-the-code-how-it-is-built-and-the-practices", "title": "What exists today: the code, how it is built, and the practices behind it"}, {"tab": "technology", "id": "what-it-takes-to-offer-this-as-a-commercial-tool-at-scale", "title": "What it takes to offer this as a commercial tool at scale"}, {"tab": "technology", "id": "technical-workflows-how-data-moves-syncs-and-alerts", "title": "Technical workflows: how data moves, syncs and alerts"}, {"tab": "technology", "id": "the-data-model-one-hotel-one-set-of-collections", "title": "The data model: one hotel, one set of collections"}, {"tab": "technology", "id": "lifecycles-how-a-job-and-a-room-change-state", "title": "Lifecycles: how a job and a room change state"}, {"tab": "business", "id": "maintenance-the-fastest-money-a-hotel-can-save", "title": "Maintenance: the fastest money a hotel can save"}, {"tab": "revenue", "id": "hosrev-rate-recommendations-a-gm-can-trust", "title": "HosREV: rate recommendations a GM can trust"}, {"tab": "revenue", "id": "rates-vs-competitors-where-hosrev-sits-in-the-market", "title": "Rates vs competitors: where HosREV sits in the market"}, {"tab": "revenue", "id": "winning-more-business-venue-sales-events-and-direct-bookings", "title": "Winning more business: venue sales, events and direct bookings"}, {"tab": "revenue", "id": "the-marketing-engine-turning-wi-fi-into-a-guest-database", "title": "The marketing engine: turning Wi-Fi into a guest database"}, {"tab": "ai", "id": "where-we-are-an-honest-starting-point", "title": "Where we are: an honest starting point"}, {"tab": "ai", "id": "how-we-will-develop-the-models-only-ever-to-enhance-the-syst", "title": "How we will develop the models: only ever to enhance the system"}, {"tab": "ai", "id": "try-it-how-ai-would-change-a-real-moment-in-the-hotel", "title": "Try it: how AI would change a real moment in the hotel"}, {"tab": "ai", "id": "hospro-intelligence-ai-that-works-the-floor-not-the-slidesho", "title": "HosPRO Intelligence: AI that works the floor, not the slideshow"}, {"tab": "ai", "id": "what-the-intelligence-looks-like-on-the-ground", "title": "What the intelligence looks like on the ground"}, {"tab": "ai", "id": "ai-for-the-guest-felt-in-the-room-not-in-an-app-store", "title": "AI for the guest: felt in the room, not in an app store"}, {"tab": "partnership", "id": "target-architecture-hospro-ada-engine", "title": "Target architecture: HosPRO + Ada Engine"}, {"tab": "partnership", "id": "six-month-roadmap-from-two-hotels-to-a-product", "title": "Six-month roadmap: from two hotels to a product"}, {"tab": "partnership", "id": "market-pricing-and-the-shape-of-the-joint-venture", "title": "Market, pricing and the shape of the joint venture"}, {"tab": "partnership", "id": "in-short-and-what-happens-next", "title": "In short \u2014 and what happens next"}, {"tab": "partnership", "id": "discuss", "title": "Discussion points and comments before the next meeting"}];const TABNAMES={"overview": "Overview", "opportunity": "Opportunity", "platform": "Platform", "connected": "Connected", "business": "Business case", "technology": "Technology", "revenue": "Revenue & growth", "ai": "AI", "partnership": "Partnership"};
+const NAV=[{"tab": "overview", "id": "executive-summary", "title": "Executive summary"}, {"tab": "overview", "id": "designed-by-people-who-own-and-run-hotels", "title": "Designed by people who own and run hotels"}, {"tab": "opportunity", "id": "independent-hotels-are-desperate-for-three-things", "title": "Independent hotels are desperate for three things"}, {"tab": "opportunity", "id": "why-this-why-us-why-now", "title": "Why this, why us, why now"}, {"tab": "platform", "id": "how-an-independent-hotel-actually-runs-today", "title": "How an independent hotel actually runs today"}, {"tab": "platform", "id": "common-sense-systems-the-six-principles", "title": "Common-sense systems: the six principles"}, {"tab": "platform", "id": "one-app-one-database-every-department", "title": "One app, one database, every department"}, {"tab": "platform", "id": "what-is-built-module-by-module", "title": "What is built \u2014 module by module"}, {"tab": "platform", "id": "what-is-built-module-by-module-continued", "title": "What is built \u2014 module by module (continued)"}, {"tab": "connected", "id": "one-action-everywhere-the-life-of-a-fault", "title": "One action, everywhere: the life of a fault"}, {"tab": "connected", "id": "how-departments-and-modules-interact", "title": "How departments and modules interact"}, {"tab": "connected", "id": "information-flow-from-a-tap-on-a-phone-to-the-owner-s-report", "title": "Information flow: from a tap on a phone to the owner's report"}, {"tab": "connected", "id": "how-the-people-connect-before-and-after", "title": "How the people connect: before and after"}, {"tab": "connected", "id": "a-day-in-a-hospro-hotel", "title": "A day in a HosPRO hotel"}, {"tab": "business", "id": "where-the-efficiency-savings-and-profit-come-from", "title": "Where the efficiency, savings and profit come from"}, {"tab": "technology", "id": "system-architecture-as-built", "title": "System architecture as built"}, {"tab": "technology", "id": "what-exists-today-the-code-how-it-is-built-and-the-practices", "title": "What exists today: the code, how it is built, and the practices behind it"}, {"tab": "technology", "id": "what-it-takes-to-offer-this-as-a-commercial-tool-at-scale", "title": "What it takes to offer this as a commercial tool at scale"}, {"tab": "technology", "id": "technical-workflows-how-data-moves-syncs-and-alerts", "title": "Technical workflows: how data moves, syncs and alerts"}, {"tab": "technology", "id": "the-data-model-one-hotel-one-set-of-collections", "title": "The data model: one hotel, one set of collections"}, {"tab": "technology", "id": "lifecycles-how-a-job-and-a-room-change-state", "title": "Lifecycles: how a job and a room change state"}, {"tab": "business", "id": "maintenance-the-fastest-money-a-hotel-can-save", "title": "Maintenance: the fastest money a hotel can save"}, {"tab": "revenue", "id": "hosrev-rate-recommendations-a-gm-can-trust", "title": "HosREV: rate recommendations a GM can trust"}, {"tab": "revenue", "id": "rates-vs-competitors-where-hosrev-sits-in-the-market", "title": "Rates vs competitors: where HosREV sits in the market"}, {"tab": "revenue", "id": "winning-more-business-venue-sales-events-and-direct-bookings", "title": "Winning more business: venue sales, events and direct bookings"}, {"tab": "revenue", "id": "the-marketing-engine-turning-wi-fi-into-a-guest-database", "title": "The marketing engine: turning Wi-Fi into a guest database"}, {"tab": "ai", "id": "where-we-are-an-honest-starting-point", "title": "Where we are: an honest starting point"}, {"tab": "ai", "id": "how-we-will-develop-the-models-only-ever-to-enhance-the-syst", "title": "How we will develop the models: only ever to enhance the system"}, {"tab": "ai", "id": "try-it-how-ai-would-change-a-real-moment-in-the-hotel", "title": "Try it: how AI would change a real moment in the hotel"}, {"tab": "ai", "id": "hospro-intelligence-ai-that-works-the-floor-not-the-slidesho", "title": "HosPRO Intelligence: AI that works the floor, not the slideshow"}, {"tab": "ai", "id": "what-the-intelligence-looks-like-on-the-ground", "title": "What the intelligence looks like on the ground"}, {"tab": "ai", "id": "ai-for-the-guest-felt-in-the-room-not-in-an-app-store", "title": "AI for the guest: felt in the room, not in an app store"}, {"tab": "partnership", "id": "target-architecture-hospro-ada-engine", "title": "Target architecture: HosPRO + Ada Engine"}, {"tab": "partnership", "id": "six-month-roadmap-from-two-hotels-to-a-product", "title": "Six-month roadmap: from two hotels to a product"}, {"tab": "partnership", "id": "market-pricing-and-the-shape-of-the-joint-venture", "title": "Market, pricing and the shape of the joint venture"}, {"tab": "partnership", "id": "in-short-and-what-happens-next", "title": "In short \u2014 and what happens next"}, {"tab": "partnership", "id": "discuss", "title": "Discussion points and comments before the next meeting"}];const TABNAMES={"overview": "Overview", "opportunity": "Opportunity", "platform": "Platform", "connected": "Connected", "business": "Business case", "technology": "Technology", "revenue": "Revenue", "ai": "AI", "partnership": "Partnership"};
 const TABS=[...document.querySelectorAll('.topnav .tab')];
 const subnav=document.getElementById('subnav');
 let cur=0;
