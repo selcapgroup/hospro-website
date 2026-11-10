@@ -1,15 +1,23 @@
-HOSPRO / ENTITY — private JV prospectus mini-site
-=================================================
-Upload the whole "entity" folder (index.html, img/, the PDF, this file) into the
-root of the hospro-website repo so it sits beside index.html, shared.css etc.
-It will then be live at:  https://hospro.co.uk/entity/
+HOSPRO / ENTITY — private JV prospectus, multi-page site (v4)
+=============================================================
+STRUCTURE
+  entity/index.html          gate (code 3132) + home + contents
+  entity/pages/*.html        37 pages, one per section
+  entity/assets/site.v4.css  shared styles
+  entity/assets/site.v4.js   shared behaviour (gate, chips, tools, form)
+  entity/img/                photos, logo, HosDESK screenshots
+  entity/HosPRO-JV-Prospectus.pdf  earlier print edition
 
-- Access code: 3132 (set in index.html, search for const CODE). The check is
-  client-side only — it keeps casual visitors out, it is not security.
-  Anyone who views the page source can read the content. Do not put anything
-  on this page you would not send by email.
-- The page is self-contained (one index.html + img/). It does not link to or
-  from the public site, and carries noindex/nofollow so search engines ignore it.
-- Tabs are bookmarkable: /entity/#ai, /entity/#partnership, etc.
-- To change the code, text or images: edit index.html directly, or ask for a
-  rebuild from the brochure source.
+UPLOAD (github.com/orngroup/hospro-website)
+  1. DELETE the existing "entity" folder in the repo first (so no old
+     single-page index.html is left behind).
+  2. Upload this whole "entity" FOLDER into the repo root
+     -> path must be entity/index.html, entity/pages/..., entity/assets/...
+  3. Wait for the Pages build (Actions tab, green tick), then open
+     https://hospro.co.uk/entity/   and hard-refresh (Cmd+Shift+R).
+     Asset files are versioned (site.v4.*) so old caches cannot apply.
+
+NOTES
+  - Access code: const CODE in assets/site.v4.js. Client-side only.
+  - Discussion form emails CONTACT_EMAIL in assets/site.v4.js.
+  - noindex/nofollow; not linked from the public site.

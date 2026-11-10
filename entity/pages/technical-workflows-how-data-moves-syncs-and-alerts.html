@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Technical workflows: how data moves, syncs and alerts · HosPRO Entity</title>
+<link rel="icon" href="../img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.v4.css">
+</head>
+<body><header class="top"><div class="wrap"><a href="../index.html" class="logo"><img src="../img/logo.png" alt="HosPRO"></a><nav class="topnav"><a class="tab" href="../pages/executive-summary.html">Overview</a><a class="tab" href="../pages/independent-hotels-are-desperate-for-three-things.html">Opportunity</a><a class="tab" href="../pages/how-an-independent-hotel-actually-runs-today.html">Platform</a><a class="tab" href="../pages/one-action-everywhere-the-life-of-a-fault.html">Connected</a><a class="tab" href="../pages/where-the-efficiency-savings-and-profit-come-from.html">Business case</a><a class="tab on" href="../pages/system-architecture-as-built.html">Technology</a><a class="tab" href="../pages/hosrev-rate-recommendations-a-gm-can-trust.html">Revenue</a><a class="tab" href="../pages/where-we-are-an-honest-starting-point.html">AI</a><a class="tab" href="../pages/target-architecture-hospro-ada-engine.html">Partnership</a></nav><span class="lock">PRIVATE</span></div></header><div class="subnav"><div class="wrap"><span class="grp">Technology</span><a href="../pages/system-architecture-as-built.html" class="">System architecture as built</a><a href="../pages/what-exists-today-the-code-how-it-is-built-and-the-practices.html" class="">What exists today</a><a href="../pages/what-it-takes-to-offer-this-as-a-commercial-tool-at-scale.html" class="">What it takes to offer this as a commercial tool at scale</a><a href="../pages/technical-workflows-how-data-moves-syncs-and-alerts.html" class="on">Technical workflows</a><a href="../pages/the-data-model-one-hotel-one-set-of-collections.html" class="">The data model</a><a href="../pages/lifecycles-how-a-job-and-a-room-change-state.html" class="">Lifecycles</a></div></div><main><div class="wrap"><article class="sec pg on" id="pg-technical-workflows-how-data-moves-syncs-and-alerts"><div class="kicker">9 · Technical architecture</div>
+  <h1>Technical workflows: how data moves, syncs and alerts</h1>
+
+  <p>Four sequence views of the mechanisms behind the hand-offs: the real-time data path on a phone, the three automatic-job triggers, the notification chain, and the per-property isolation that lets one platform serve many hotels.</p>
+  <div class="two">
+    <div class="svgwrap">
+    <svg viewBox="0 0 360 250" font-family="Manrope, Aptos, Segoe UI, Arial, sans-serif" font-size="8.6">
+      <defs><marker id="t1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#1F3864"/></marker></defs>
+      <text x="180" y="14" text-anchor="middle" font-weight="700" fill="#1F3864" font-size="10">A · Real-time sync on a phone</text>
+      <g font-weight="700" fill="#fff" font-size="8.4"><rect x="8" y="24" width="76" height="22" rx="5" fill="#2E6B5E"/><text x="46" y="39" text-anchor="middle">PWA (phone)</text><rect x="100" y="24" width="76" height="22" rx="5" fill="#1F3864"/><text x="138" y="39" text-anchor="middle">Service worker</text><rect x="192" y="24" width="76" height="22" rx="5" fill="#2E6B5E"/><text x="230" y="39" text-anchor="middle">Firestore</text><rect x="284" y="24" width="70" height="22" rx="5" fill="#2E6B5E"/><text x="319" y="39" text-anchor="middle">Other phones</text></g>
+      <g stroke="#c7d0da" stroke-dasharray="3 3"><line x1="46" y1="46" x2="46" y2="240"/><line x1="138" y1="46" x2="138" y2="240"/><line x1="230" y1="46" x2="230" y2="240"/><line x1="319" y1="46" x2="319" y2="240"/></g>
+      <g stroke="#1F3864" stroke-width="1.2" fill="none" marker-end="url(#t1)"><path d="M46 70 L136 70"/><path d="M138 90 L48 90"/><path d="M46 115 L228 115"/><path d="M230 140 L48 140"/><path d="M230 165 L317 165"/><path d="M46 195 L228 195"/><path d="M230 220 L48 220"/></g>
+      <g fill="#1f2933"><text x="52" y="66">open app (network-first)</text><text x="52" y="86">serve cached shell if offline</text><text x="52" y="111">write doc (room / job) + photo</text><text x="52" y="136">ack · version · timestamp</text><text x="236" y="161">snapshot listener fires</text><text x="52" y="191">subscribe hosfix_jobs where assignee</text><text x="52" y="216">live list · badges · "needs attention"</text></g>
+      <text x="8" y="243" fill="#5b6b7a" font-size="8">photos compressed client-side; docs &gt; ~900 KB keep photos in hosfix_photos</text>
+    </svg></div>
+    <div class="svgwrap">
+    <svg viewBox="0 0 360 250" font-family="Manrope, Aptos, Segoe UI, Arial, sans-serif" font-size="8.6">
+      <defs><marker id="t2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#EA7A1E"/></marker></defs>
+      <text x="180" y="14" text-anchor="middle" font-weight="700" fill="#1F3864" font-size="10">B · Automatic job triggers</text>
+      <g>
+        <rect x="8" y="30" width="150" height="40" rx="7" fill="#fbeaea" stroke="#B3261E"/><text x="83" y="47" text-anchor="middle" font-weight="700" fill="#B3261E">HosFIRE</text><text x="83" y="61" text-anchor="middle">test result = fail · activation</text>
+        <rect x="8" y="90" width="150" height="40" rx="7" fill="#f1ecf6" stroke="#6b4e8f"/><text x="83" y="107" text-anchor="middle" font-weight="700" fill="#6b4e8f">F&amp;B check</text><text x="83" y="121" text-anchor="middle">fridge temp outside 1–5 °C</text>
+        <rect x="8" y="150" width="150" height="40" rx="7" fill="#eaf1f6" stroke="#2f6d8f"/><text x="83" y="167" text-anchor="middle" font-weight="700" fill="#2f6d8f">HosREC / HosHOUSE</text><text x="83" y="181" text-anchor="middle">"Report a fault" with photo</text>
+        <rect x="200" y="70" width="152" height="90" rx="9" fill="#fdf0e4" stroke="#EA7A1E" stroke-width="1.5"/><text x="276" y="90" text-anchor="middle" font-weight="700" fill="#b85c0c">raiseFixJob()</text><text x="210" y="106">priority: urgent | high | by reporter</text><text x="210" y="119">assignees: DEFAULT_FIXERS</text><text x="210" y="132">source · room · area · photo ref</text><text x="210" y="145">→ hosfix_jobs (create)</text><text x="210" y="155" fill="#5b6b7a">→ notify() push + badge</text>
+        <rect x="200" y="200" width="152" height="36" rx="7" fill="#e2f1ee" stroke="#2E6B5E"/><text x="276" y="215" text-anchor="middle" font-weight="700" fill="#2E6B5E">on complete</text><text x="276" y="229" text-anchor="middle">room.maintStatus = complete</text>
+      </g>
+      <g stroke="#EA7A1E" stroke-width="1.3" fill="none" marker-end="url(#t2)"><path d="M158 50 L200 95"/><path d="M158 110 L200 112"/><path d="M158 170 L200 130"/><path d="M276 160 L276 200"/></g>
+    </svg></div>
+  </div>
+  <div class="two" style="margin-top:8px">
+    <div class="svgwrap">
+    <svg viewBox="0 0 360 250" font-family="Manrope, Aptos, Segoe UI, Arial, sans-serif" font-size="8.6">
+      <defs><marker id="t3" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#1F3864"/></marker></defs>
+      <text x="180" y="14" text-anchor="middle" font-weight="700" fill="#1F3864" font-size="10">C · Notification chain</text>
+      <g font-weight="700" fill="#fff" font-size="8.4"><rect x="8" y="24" width="70" height="22" rx="5" fill="#EA7A1E"/><text x="43" y="39" text-anchor="middle">Job event</text><rect x="94" y="24" width="80" height="22" rx="5" fill="#1F3864"/><text x="134" y="39" text-anchor="middle">Cloud Function</text><rect x="190" y="24" width="70" height="22" rx="5" fill="#1F3864"/><text x="225" y="39" text-anchor="middle">FCM</text><rect x="276" y="24" width="78" height="22" rx="5" fill="#2E6B5E"/><text x="315" y="39" text-anchor="middle">Fixer's phone</text></g>
+      <g stroke="#c7d0da" stroke-dasharray="3 3"><line x1="43" y1="46" x2="43" y2="240"/><line x1="134" y1="46" x2="134" y2="240"/><line x1="225" y1="46" x2="225" y2="240"/><line x1="315" y1="46" x2="315" y2="240"/></g>
+      <g stroke="#1F3864" stroke-width="1.2" fill="none" marker-end="url(#t3)"><path d="M315 70 L136 70"/><path d="M43 100 L132 100"/><path d="M134 125 L223 125"/><path d="M225 150 L313 150"/><path d="M315 180 L45 180"/><path d="M43 210 L313 210"/></g>
+      <g fill="#1f2933"><text x="140" y="66">register(token, userId) once</text><text x="48" y="96">new · assigned · urgent · done</text><text x="140" y="121">notify(): data-only payload</text><text x="230" y="146">deliver to tokens</text><text x="48" y="176">SW shows pop-up · chime · badge · opens job</text><text x="48" y="206">fallback: WhatsApp template (numbers in users)</text></g>
+      <text x="8" y="243" fill="#5b6b7a" font-size="8">events: new job, assigned, reassigned, urgent, completed, "test my alerts"</text>
+    </svg></div>
+    <div class="svgwrap">
+    <svg viewBox="0 0 360 250" font-family="Manrope, Aptos, Segoe UI, Arial, sans-serif" font-size="8.6">
+      <text x="180" y="14" text-anchor="middle" font-weight="700" fill="#1F3864" font-size="10">D · One platform, many properties</text>
+      <rect x="8" y="26" width="344" height="48" rx="8" fill="#1F3864"/><text x="180" y="46" text-anchor="middle" fill="#fff" font-weight="700">HosPRO platform (shared code · shared functions)</text><text x="180" y="62" text-anchor="middle" fill="#cfe6e2">app shell · modules · rules · notify · AI layer (JV)</text>
+      <g>
+        <rect x="8" y="90" width="106" height="130" rx="8" fill="#e8eaf4" stroke="#4f5b9a"/><text x="61" y="108" text-anchor="middle" font-weight="700" fill="#1F3864">Brandon Hall</text><text x="61" y="122" text-anchor="middle" fill="#5b6b7a">brandon.hospro.co.uk</text><text x="14" y="140">hoshouse_* · hosfix_*</text><text x="14" y="153">hosrec_* · fb_* …</text><text x="14" y="166">users · PINs · areas</text><text x="14" y="179">120 rooms · 7 areas</text><text x="14" y="192">threshold £50</text><text x="14" y="205">fixers: Herman, Pete</text>
+        <rect x="127" y="90" width="106" height="130" rx="8" fill="#e2f1ee" stroke="#2E6B5E"/><text x="180" y="108" text-anchor="middle" font-weight="700" fill="#1F3864">The Barn</text><text x="180" y="122" text-anchor="middle" fill="#5b6b7a">thebarnhotel.hospro.co.uk</text><text x="133" y="140">barn_fix_jobs</text><text x="133" y="153">barn_requests · deliveries</text><text x="133" y="166">barn_config</text><text x="133" y="179">70 rooms · 4 buildings</text><text x="133" y="192">own codes &amp; PINs</text><text x="133" y="205">fixer: Josh</text>
+        <rect x="246" y="90" width="106" height="130" rx="8" fill="#fff" stroke="#c7d0da" stroke-dasharray="4 3"/><text x="299" y="108" text-anchor="middle" font-weight="700" fill="#1F3864">Hotel n</text><text x="299" y="122" text-anchor="middle" fill="#5b6b7a">&lt;hotel&gt;.hospro.co.uk</text><text x="252" y="140">tenantId on every doc</text><text x="252" y="153">rules scoped by tenant</text><text x="252" y="166">config: rooms, areas,</text><text x="252" y="179">teams, thresholds,</text><text x="252" y="192">branding — one file</text><text x="252" y="205" fill="#5b6b7a">target: live in a day</text>
+      </g>
+      <text x="8" y="243" fill="#5b6b7a" font-size="8">JV step: move from prefixed collections to tenant-scoped rules + real auth claims</text>
+    </svg></div>
+  </div>
+  <div class="cap">Figure E · The four mechanisms behind the platform: sync, triggers, notifications and multi-tenancy</div>
+
+  </article><div class="pager"><a class="btn" href="what-it-takes-to-offer-this-as-a-commercial-tool-at-scale.html">◀ What it takes to offer this as a commercial tool</a><span class="note">Page 19 of 37 · Technology</span><a class="btn primary" href="the-data-model-one-hotel-one-set-of-collections.html">The data model: one hotel, one set of collection ▶</a></div></div></main><footer><div class="wrap"><span><b>HosPRO</b> · Hospitality Performance, Revenue &amp; Operations · hospro.co.uk</span><span>Prepared for Immediate Impact · November 2026 · Private &amp; confidential</span></div></footer>
+<div id="lightbox"></div>
+<script src="../assets/site.v4.js"></script>
+</body></html>
