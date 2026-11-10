@@ -1,14 +1,23 @@
-HOSPRO / ENTITY — private JV prospectus mini-site (v2, paged)
+HOSPRO / ENTITY — private JV prospectus, multi-page site (v4)
 =============================================================
-Upload the whole "entity" FOLDER into the root of the hospro-website repo
-(so the path is entity/index.html — not the contents into the root!).
-Live at: https://hospro.co.uk/entity/
+STRUCTURE
+  entity/index.html          gate (code 3132) + home + contents
+  entity/pages/*.html        37 pages, one per section
+  entity/assets/site.v4.css  shared styles
+  entity/assets/site.v4.js   shared behaviour (gate, chips, tools, form)
+  entity/img/                photos, logo, HosDESK screenshots
+  entity/HosPRO-JV-Prospectus.pdf  earlier print edition
 
-- Access code 3132 (client-side; search "const CODE" in index.html).
-- One page per section, top navigation by chapter, sub-navigation by page,
-  Previous/Next at the bottom. Every page is bookmarkable (#page-id).
-- Orange "HosPRO·AI" chips on pages show where AI with Immediate Impact applies.
-- AI tab: "Try it" simulator, clickable intelligence stack, 12-model table.
-- Partnership tab ends with a discussion form that opens a pre-filled email.
-  Change the address: search CONTACT_EMAIL in index.html (currently ajay@hospro.co.uk).
-- noindex/nofollow; not linked from the public site.
+UPLOAD (github.com/orngroup/hospro-website)
+  1. DELETE the existing "entity" folder in the repo first (so no old
+     single-page index.html is left behind).
+  2. Upload this whole "entity" FOLDER into the repo root
+     -> path must be entity/index.html, entity/pages/..., entity/assets/...
+  3. Wait for the Pages build (Actions tab, green tick), then open
+     https://hospro.co.uk/entity/   and hard-refresh (Cmd+Shift+R).
+     Asset files are versioned (site.v4.*) so old caches cannot apply.
+
+NOTES
+  - Access code: const CODE in assets/site.v4.js. Client-side only.
+  - Discussion form emails CONTACT_EMAIL in assets/site.v4.js.
+  - noindex/nofollow; not linked from the public site.

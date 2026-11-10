@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>The data model: one hotel, one set of collections · HosPRO Entity</title>
+<link rel="icon" href="../img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.v4.css">
+</head>
+<body><header class="top"><div class="wrap"><a href="../index.html" class="logo"><img src="../img/logo.png" alt="HosPRO"></a><nav class="topnav"><a class="tab" href="../pages/executive-summary.html">Overview</a><a class="tab" href="../pages/independent-hotels-are-desperate-for-three-things.html">Opportunity</a><a class="tab" href="../pages/how-an-independent-hotel-actually-runs-today.html">Platform</a><a class="tab" href="../pages/one-action-everywhere-the-life-of-a-fault.html">Connected</a><a class="tab" href="../pages/where-the-efficiency-savings-and-profit-come-from.html">Business case</a><a class="tab on" href="../pages/system-architecture-as-built.html">Technology</a><a class="tab" href="../pages/hosrev-rate-recommendations-a-gm-can-trust.html">Revenue</a><a class="tab" href="../pages/where-we-are-an-honest-starting-point.html">AI</a><a class="tab" href="../pages/target-architecture-hospro-ada-engine.html">Partnership</a></nav><span class="lock">PRIVATE</span></div></header><div class="subnav"><div class="wrap"><span class="grp">Technology</span><a href="../pages/system-architecture-as-built.html" class="">System architecture as built</a><a href="../pages/what-exists-today-the-code-how-it-is-built-and-the-practices.html" class="">What exists today</a><a href="../pages/what-it-takes-to-offer-this-as-a-commercial-tool-at-scale.html" class="">What it takes to offer this as a commercial tool at scale</a><a href="../pages/technical-workflows-how-data-moves-syncs-and-alerts.html" class="">Technical workflows</a><a href="../pages/the-data-model-one-hotel-one-set-of-collections.html" class="on">The data model</a><a href="../pages/lifecycles-how-a-job-and-a-room-change-state.html" class="">Lifecycles</a></div></div><main><div class="wrap"><article class="sec pg on" id="pg-the-data-model-one-hotel-one-set-of-collections"><div class="kicker">10 · Database design</div>
+  <h1>The data model: one hotel, one set of collections</h1>
+  <p>Firestore collections as deployed. Rooms are the hub: housekeeping, maintenance, reception and the overview all key on the room, so "Rooms 360°" is a query, not a report. A second property uses the same shapes under its own prefix (<span class="mono">barn_*</span>).</p>
+  <div class="svgwrap">
+  <svg viewBox="0 0 760 470" font-family="Manrope, Aptos, Segoe UI, Arial, sans-serif" font-size="8.8">
+    <defs><marker id="dia" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,4 L4,0 L8,4 L4,8 z" fill="#1F3864"/></marker></defs>
+    <!-- entity helper: header + rows -->
+    <!-- hoshouse_rooms (centre) -->
+    <g transform="translate(280,170)">
+      <rect width="200" height="128" rx="6" fill="#fff" stroke="#2E6B5E" stroke-width="1.5"/><rect width="200" height="20" rx="6" fill="#2E6B5E"/><text x="100" y="14" text-anchor="middle" fill="#fff" font-weight="700">hoshouse_rooms</text>
+      <text x="8" y="34" fill="#5b6b7a">id = date__room</text>
+      <text x="8" y="47">date · room · type · cat · floor · area</text>
+      <text x="8" y="60">status pending|in_progress|done|blocked</text>
+      <text x="8" y="73">housekeeper · startAt · finishAt · durationSec</text>
+      <text x="8" y="86">checklist{} · photos{} · notes · voiceNote</text>
+      <text x="8" y="99">maintenance · maintJobId · maintStatus</text>
+      <text x="8" y="112">lostProperty · lostPhoto</text>
+    </g>
+    <!-- hoshouse_photos -->
+    <g transform="translate(20,150)">
+      <rect width="200" height="80" rx="6" fill="#fff" stroke="#2E6B5E"/><rect width="200" height="20" rx="6" fill="#2E6B5E"/><text x="100" y="14" text-anchor="middle" fill="#fff" font-weight="700">hoshouse_photos</text>
+      <text x="8" y="34" fill="#5b6b7a">id = date__room__slot__ts</text><text x="8" y="47">date · room · slot · label · kind</text><text x="8" y="60">dataUrl · by · byName · takenAt</text>
+    </g>
+    <!-- hoshouse_config -->
+    <g transform="translate(20,250)">
+      <rect width="200" height="68" rx="6" fill="#fff" stroke="#2E6B5E"/><rect width="200" height="20" rx="6" fill="#2E6B5E"/><text x="100" y="14" text-anchor="middle" fill="#fff" font-weight="700">hoshouse_config / current</text>
+      <text x="8" y="34">rooms[] inventory (number, type, floor, cat)</text><text x="8" y="47">staff[] (id, name, PIN, skills, rating)</text><text x="8" y="60">settings</text>
+    </g>
+    <!-- hosfix_jobs -->
+    <g transform="translate(540,150)">
+      <rect width="210" height="150" rx="6" fill="#fff" stroke="#EA7A1E" stroke-width="1.5"/><rect width="210" height="20" rx="6" fill="#EA7A1E"/><text x="105" y="14" text-anchor="middle" fill="#fff" font-weight="700">hosfix_jobs</text>
+      <text x="8" y="34" fill="#5b6b7a">id · title · area · areaLabel · location · room</text>
+      <text x="8" y="47">workType · description · priority</text>
+      <text x="8" y="60">status not-started|in-progress|pending_approval</text>
+      <text x="8" y="73">        |complete|cancelled</text>
+      <text x="8" y="86">assignees[] · cost · materials[] · notes[]</text>
+      <text x="8" y="99">source HosHOUSE|Reception|F&amp;B|Fire</text>
+      <text x="8" y="112">createdBy · reportedBy · approvedBy · approvedAt</text>
+      <text x="8" y="125">createdAt · updatedAt · completedAt</text>
+      <text x="8" y="138">property (brandon | barn_)</text>
+    </g>
+    <!-- hosfix_photos / timelogs -->
+    <g transform="translate(540,320)">
+      <rect width="100" height="56" rx="6" fill="#fff" stroke="#EA7A1E"/><rect width="100" height="20" rx="6" fill="#EA7A1E"/><text x="50" y="14" text-anchor="middle" fill="#fff" font-weight="700">hosfix_photos</text>
+      <text x="6" y="34">jobId · kind</text><text x="6" y="47">before|after|receipt</text>
+    </g>
+    <g transform="translate(650,320)">
+      <rect width="100" height="56" rx="6" fill="#fff" stroke="#EA7A1E"/><rect width="100" height="20" rx="6" fill="#EA7A1E"/><text x="50" y="14" text-anchor="middle" fill="#fff" font-weight="700">hosfix_timelogs</text>
+      <text x="6" y="34">jobId · userId</text><text x="6" y="47">start · stop · secs</text>
+    </g>
+    <!-- hosrec -->
+    <g transform="translate(280,20)">
+      <rect width="200" height="110" rx="6" fill="#fff" stroke="#2f6d8f" stroke-width="1.5"/><rect width="200" height="20" rx="6" fill="#2f6d8f"/><text x="100" y="14" text-anchor="middle" fill="#fff" font-weight="700">hosrec_requests · incidents · fire</text>
+      <text x="8" y="34">type guest|hk_issue|delivery|visitor</text><text x="8" y="47">room · guest · detail · status · by · at</text>
+      <text x="8" y="62" fill="#5b6b7a">incidents: category · severity · closedBy</text>
+      <text x="8" y="77" fill="#5b6b7a">fire: test|drill|activation|check · callPoint</text>
+      <text x="8" y="90" fill="#5b6b7a">  result pass|fail → raises hosfix_jobs</text>
+      <text x="8" y="103" fill="#5b6b7a">(barn_requests · barn_deliveries · barn_visitors)</text>
+    </g>
+    <!-- F&B -->
+    <g transform="translate(20,20)">
+      <rect width="230" height="110" rx="6" fill="#fff" stroke="#6b4e8f" stroke-width="1.5"/><rect width="230" height="20" rx="6" fill="#6b4e8f"/><text x="115" y="14" text-anchor="middle" fill="#fff" font-weight="700">fb_submissions · fb_daily · fb_checks · fb_menus</text>
+      <text x="8" y="34">date · covers · revenue · breakfast · dinner · by</text><text x="8" y="47">checks: opening|closing · fridges[{name,temp,ok}]</text>
+      <text x="8" y="60">  out-of-range → raises hosfix_jobs (high)</text><text x="8" y="73">menus: name · items[] · eightySixed[]</text>
+      <text x="8" y="90" fill="#5b6b7a">bar stock (114 lines) in portal data</text>
+    </g>
+    <!-- sales -->
+    <g transform="translate(510,20)">
+      <rect width="240" height="110" rx="6" fill="#fff" stroke="#8a6d3b" stroke-width="1.5"/><rect width="240" height="20" rx="6" fill="#8a6d3b"/><text x="120" y="14" text-anchor="middle" fill="#fff" font-weight="700">enquiries · corporate · suppliers</text>
+      <text x="8" y="34">enquiry: client · event type · date · pax · value</text><text x="8" y="47">stage · owner · followUpAt · notes[] · source</text>
+      <text x="8" y="62" fill="#5b6b7a">corporate accounts (66) · suppliers from Xero (162)</text>
+      <text x="8" y="77" fill="#5b6b7a">quotes (desktop quote builder)</text>
+      <text x="8" y="95" fill="#5b6b7a">pipeline fed by Rezlynx booking-source report</text>
+    </g>
+    <!-- people -->
+    <g transform="translate(20,340)">
+      <rect width="230" height="110" rx="6" fill="#fff" stroke="#2B726A" stroke-width="1.5"/><rect width="230" height="20" rx="6" fill="#2B726A"/><text x="115" y="14" text-anchor="middle" fill="#fff" font-weight="700">sp_staff · sp_rota · sp_fc · clock punches</text>
+      <text x="8" y="34">staff: id · name · dept · role · rate · PIN</text><text x="8" y="47">rota: week · staffId · shifts[] · hours · cost</text>
+      <text x="8" y="60">punches: staffId · in · out · geo · source QR</text><text x="8" y="73">reconciliation: rostered vs actual (costed)</text>
+      <text x="8" y="90" fill="#5b6b7a">hospro_public/rota → published to the phone app</text>
+      <text x="8" y="103" fill="#5b6b7a">hospro_app/users → PIN &amp; role overrides</text>
+    </g>
+    <!-- marketing -->
+    <g transform="translate(280,340)">
+      <rect width="230" height="110" rx="6" fill="#fff" stroke="#9C4F63" stroke-width="1.5"/><rect width="230" height="20" rx="6" fill="#9C4F63"/><text x="115" y="14" text-anchor="middle" fill="#fff" font-weight="700">wifi_signups · newsletters · meta/*</text>
+      <text x="8" y="34">title · first · last · email · town · reason</text><text x="8" y="47">resident|visitor · consent · age18 · deviceId</text>
+      <text x="8" y="60">ap (access point) → area · ssid · mac · at</text><text x="8" y="73">newsletters: name · html · savedAt</text>
+      <text x="8" y="90" fill="#5b6b7a">meta/ap_names · meta/geo_towns · meta/access_config</text>
+      <text x="8" y="103" fill="#5b6b7a">HosREV: rates · compset · events · recommendations</text>
+    </g>
+    <!-- relationships -->
+    <g stroke="#1F3864" stroke-width="1.4" fill="none" marker-end="url(#dia)">
+      <path d="M220 190 L280 210"/>
+      <path d="M220 284 L280 260"/>
+      <path d="M480 250 L540 240"/>
+      <path d="M380 130 L380 170"/>
+      <path d="M480 90 L540 90"/>
+      <path d="M250 60 L280 60"/>
+      <path d="M250 90 C 265 90, 265 100, 280 100"/>
+      <path d="M590 300 L590 320"/><path d="M700 300 L700 320"/>
+      <path d="M250 395 L280 395"/>
+    </g>
+    <g font-size="8" fill="#1F3864" font-weight="700">
+      <text x="236" y="186">1:n</text><text x="236" y="276">rooms</text><text x="500" y="238">maintJobId</text><text x="386" y="152">room</text><text x="500" y="84">source</text><text x="596" y="314">jobId</text><text x="706" y="314">jobId</text>
+    </g>
+  </svg></div>
+  <div class="cap">Figure 8 · Entity map of the live collections — colour = owning module; arrows = keyed relationships</div>
+  </article><div class="pager"><a class="btn" href="technical-workflows-how-data-moves-syncs-and-alerts.html">◀ Technical workflows: how data moves, syncs and a</a><span class="note">Page 20 of 37 · Technology</span><a class="btn primary" href="lifecycles-how-a-job-and-a-room-change-state.html">Lifecycles: how a job and a room change state ▶</a></div></div></main><footer><div class="wrap"><span><b>HosPRO</b> · Hospitality Performance, Revenue &amp; Operations · hospro.co.uk</span><span>Prepared for Immediate Impact · November 2026 · Private &amp; confidential</span></div></footer>
+<div id="lightbox"></div>
+<script src="../assets/site.v4.js"></script>
+</body></html>

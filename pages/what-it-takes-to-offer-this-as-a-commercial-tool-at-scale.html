@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>What it takes to offer this as a commercial tool at scale · HosPRO Entity</title>
+<link rel="icon" href="../img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.v4.css">
+</head>
+<body><header class="top"><div class="wrap"><a href="../index.html" class="logo"><img src="../img/logo.png" alt="HosPRO"></a><nav class="topnav"><a class="tab" href="../pages/executive-summary.html">Overview</a><a class="tab" href="../pages/independent-hotels-are-desperate-for-three-things.html">Opportunity</a><a class="tab" href="../pages/how-an-independent-hotel-actually-runs-today.html">Platform</a><a class="tab" href="../pages/one-action-everywhere-the-life-of-a-fault.html">Connected</a><a class="tab" href="../pages/where-the-efficiency-savings-and-profit-come-from.html">Business case</a><a class="tab on" href="../pages/system-architecture-as-built.html">Technology</a><a class="tab" href="../pages/hosrev-rate-recommendations-a-gm-can-trust.html">Revenue</a><a class="tab" href="../pages/where-we-are-an-honest-starting-point.html">AI</a><a class="tab" href="../pages/target-architecture-hospro-ada-engine.html">Partnership</a></nav><span class="lock">PRIVATE</span></div></header><div class="subnav"><div class="wrap"><span class="grp">Technology</span><a href="../pages/system-architecture-as-built.html" class="">System architecture as built</a><a href="../pages/what-exists-today-the-code-how-it-is-built-and-the-practices.html" class="">What exists today</a><a href="../pages/what-it-takes-to-offer-this-as-a-commercial-tool-at-scale.html" class="on">What it takes to offer this as a commercial tool at scale</a><a href="../pages/technical-workflows-how-data-moves-syncs-and-alerts.html" class="">Technical workflows</a><a href="../pages/the-data-model-one-hotel-one-set-of-collections.html" class="">The data model</a><a href="../pages/lifecycles-how-a-job-and-a-room-change-state.html" class="">Lifecycles</a></div></div><main><div class="wrap"><article class="sec pg on" id="pg-what-it-takes-to-offer-this-as-a-commercial-tool-at-scale"><div class="kicker">9 · Technical architecture</div>
+  <h1>What it takes to offer this as a commercial tool at scale</h1>
+  <p>Going from "two hotels we run" to "a product any independent can switch on" is mostly infrastructure, security and operations work — the plumbing Ada Engine describes as already solved. This is the gap, item by item, with what exists today beside what a commercial platform needs.</p>
+  <div class="svgwrap">
+  <svg viewBox="0 0 760 300" font-family="Manrope, Aptos, Segoe UI, Arial, sans-serif" font-size="9.4">
+    <defs><marker id="sc1" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#1F3864"/></marker></defs>
+    <text x="150" y="20" text-anchor="middle" font-weight="800" fill="#1F3864" font-size="11">TODAY · built to run two hotels</text>
+    <text x="610" y="20" text-anchor="middle" font-weight="800" fill="#0f766e" font-size="11">TARGET · built to serve hundreds</text>
+    <g>
+      <rect x="10" y="32" width="280" height="250" rx="12" fill="#e8eaf4" stroke="#1F3864"/>
+      <g fill="#1f2933"><text x="22" y="56">Static PWA on GitHub Pages</text><text x="22" y="76">One Firebase project, prefixed collections</text><text x="22" y="96">PIN login, open operational rules</text><text x="22" y="116">Two Cloud Functions (push)</text><text x="22" y="136">Manual upload of changed files</text><text x="22" y="156">Render checks before upload</text><text x="22" y="176">Firebase console for monitoring</text><text x="22" y="196">Per-hotel config file, cloned by hand</text><text x="22" y="216">Integrations built one at a time</text><text x="22" y="236">Support by the founders, by phone</text><text x="22" y="256">Billing: none (own hotels)</text><text x="22" y="274" fill="#5b6b7a">cost: tens of pounds a month</text></g>
+      <rect x="470" y="32" width="280" height="250" rx="12" fill="#e0f2ef" stroke="#0f766e"/>
+      <g fill="#1f2933"><text x="482" y="56">Containerised, environment-per-stage deploys</text><text x="482" y="76">Multi-tenant data with tenant-scoped rules</text><text x="482" y="96">Real auth, role claims, SSO option, audit log</text><text x="482" y="116">Service layer for integrations &amp; AI</text><text x="482" y="136">CI/CD with automated tests and preview builds</text><text x="482" y="156">Test suite per module and per role</text><text x="482" y="176">Monitoring, alerting, error tracking, SLAs</text><text x="482" y="196">Self-serve onboarding wizard (rooms, teams, rules)</text><text x="482" y="216">Connector framework: PMS, channel, rate, accounts</text><text x="482" y="236">Support desk, status page, knowledge base</text><text x="482" y="256">Subscription billing per property; contracts, DPA</text><text x="482" y="274" fill="#5b6b7a">cost: scales per property, still low</text></g>
+    </g>
+    <g stroke="#1F3864" stroke-width="2" fill="none" marker-end="url(#sc1)"><path d="M290 70 L470 70"/><path d="M290 150 L470 150"/><path d="M290 230 L470 230"/></g>
+    <g fill="#1F3864" font-weight="700" font-size="9"><text x="380" y="62" text-anchor="middle">platform engineering</text><text x="380" y="142" text-anchor="middle">security &amp; operations</text><text x="380" y="222" text-anchor="middle">commercial operations</text></g>
+  </svg></div>
+  <div class="cap">Figure N · The gap between a system that runs our hotels and a product that runs anyone's</div>
+  <table>
+    <tr><th style="width:22%">Area</th><th>What a commercial platform needs</th><th style="width:22%">Who provides it in the JV</th></tr>
+    <tr><td>Identity &amp; security</td><td>Real authentication with role claims, per-tenant data isolation, encrypted backups, penetration testing, GDPR data-processing agreement, data residency (UK/EU)</td><td>Partner platform (built in)</td></tr>
+    <tr><td>Multi-tenancy</td><td>One codebase serving many hotels; tenant id on every record; configuration, branding and rules per property; estate-level benchmarks anonymised</td><td>Partner + HosPRO data model</td></tr>
+    <tr><td>Engineering practice</td><td>Source control with reviews, CI/CD, automated tests, staging environment, feature flags, versioned releases, rollback</td><td>Partner</td></tr>
+    <tr><td>Reliability</td><td>Monitoring, alerting, error tracking, uptime SLA, incident process, status page; offline tolerance on hotel Wi-Fi</td><td>Partner</td></tr>
+    <tr><td>Integrations</td><td>Connector framework for PMS (Guestline, Mews, Opera Cloud, Cloudbeds), channel managers, rate shoppers, accounts (Xero), messaging (WhatsApp Business, SMS, email)</td><td>Joint</td></tr>
+    <tr><td>AI infrastructure</td><td>Model training and serving per property, registry and versioning, evaluation, prompt/agent tooling, voice, cost controls</td><td>Partner (Ada Engine)</td></tr>
+    <tr><td>Onboarding</td><td>Self-serve wizard: rooms, areas, teams, PINs, thresholds, branding; import from PMS; go-live checklist; training content</td><td>HosPRO content, partner tooling</td></tr>
+    <tr><td>Commercial</td><td>Subscription billing per property, contracts, support desk, knowledge base, customer success, partner/consultancy channel</td><td>HosPRO (operations), partner (billing tooling)</td></tr>
+    <tr><td>Product management</td><td>Roadmap governance, hotel advisory group, release notes, measured outcomes per feature</td><td>HosPRO leads, joint steering</td></tr>
+  </table>
+</article><div class="pager"><a class="btn" href="what-exists-today-the-code-how-it-is-built-and-the-practices.html">◀ What exists today: the code, how it is built, an</a><span class="note">Page 18 of 37 · Technology</span><a class="btn primary" href="technical-workflows-how-data-moves-syncs-and-alerts.html">Technical workflows: how data moves, syncs and a ▶</a></div></div></main><footer><div class="wrap"><span><b>HosPRO</b> · Hospitality Performance, Revenue &amp; Operations · hospro.co.uk</span><span>Prepared for Immediate Impact · November 2026 · Private &amp; confidential</span></div></footer>
+<div id="lightbox"></div>
+<script src="../assets/site.v4.js"></script>
+</body></html>

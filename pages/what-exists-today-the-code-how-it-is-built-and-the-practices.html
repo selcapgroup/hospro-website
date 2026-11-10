@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>What exists today: the code, how it is built, and the practices behind it · HosPRO Entity</title>
+<link rel="icon" href="../img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.v4.css">
+</head>
+<body><header class="top"><div class="wrap"><a href="../index.html" class="logo"><img src="../img/logo.png" alt="HosPRO"></a><nav class="topnav"><a class="tab" href="../pages/executive-summary.html">Overview</a><a class="tab" href="../pages/independent-hotels-are-desperate-for-three-things.html">Opportunity</a><a class="tab" href="../pages/how-an-independent-hotel-actually-runs-today.html">Platform</a><a class="tab" href="../pages/one-action-everywhere-the-life-of-a-fault.html">Connected</a><a class="tab" href="../pages/where-the-efficiency-savings-and-profit-come-from.html">Business case</a><a class="tab on" href="../pages/system-architecture-as-built.html">Technology</a><a class="tab" href="../pages/hosrev-rate-recommendations-a-gm-can-trust.html">Revenue</a><a class="tab" href="../pages/where-we-are-an-honest-starting-point.html">AI</a><a class="tab" href="../pages/target-architecture-hospro-ada-engine.html">Partnership</a></nav><span class="lock">PRIVATE</span></div></header><div class="subnav"><div class="wrap"><span class="grp">Technology</span><a href="../pages/system-architecture-as-built.html" class="">System architecture as built</a><a href="../pages/what-exists-today-the-code-how-it-is-built-and-the-practices.html" class="on">What exists today</a><a href="../pages/what-it-takes-to-offer-this-as-a-commercial-tool-at-scale.html" class="">What it takes to offer this as a commercial tool at scale</a><a href="../pages/technical-workflows-how-data-moves-syncs-and-alerts.html" class="">Technical workflows</a><a href="../pages/the-data-model-one-hotel-one-set-of-collections.html" class="">The data model</a><a href="../pages/lifecycles-how-a-job-and-a-room-change-state.html" class="">Lifecycles</a></div></div><main><div class="wrap"><article class="sec pg on" id="pg-what-exists-today-the-code-how-it-is-built-and-the-practices"><div class="kicker">9 · Technical architecture</div>
+  <h1>What exists today: the code, how it is built, and the practices behind it</h1>
+  <p>A plain account of the current codebase for a partner's engineers. It is deliberately simple, works every day in two hotels, and was built for speed of change rather than scale. Its strengths and its limits are both listed.</p>
+  
+<h3>Screens from the live system</h3>
+<p class="note">HosDESK at Brandon Hall — the reception board and two of its cards, as used today. Click to enlarge.</p>
+<div class="gallery">
+  <figure><img src="../img/hosdesk-cards.jpg" alt="HosDESK card board" data-light loading="lazy"><figcaption>HosDESK board: guest requests, deliveries, maintenance, shift handover, room check, staff directory, TV audit</figcaption></figure>
+  <figure><img src="../img/hosdesk-requests.jpg" alt="Guest requests" data-light loading="lazy"><figcaption>Guest requests with to-do / urgent / in-progress / done filters and a period picker</figcaption></figure>
+  <figure><img src="../img/hosdesk-deliveries.jpg" alt="Deliveries" data-light loading="lazy"><figcaption>Deliveries: supplier, goods, size, who it is for, where left — date and time recorded automatically</figcaption></figure>
+</div>
+<div class="two">
+    <div>
+      <h3 style="margin-top:0">Stack as it stands</h3>
+      <table>
+        <tr><th>Layer</th><th>What we use</th></tr>
+        <tr><td>Front end</td><td>Hand-written HTML/CSS/JS — no framework; one shell (`app.html`) with per-department modules (`app/core.js`, `mod-house.js`, `mod-fix.js`, `mod-rec.js`, `mod-fb.js`, `mod-sales.js`, `mod-misc.js`, `mod-manage.js`); desktop portal (`index.html`, `app.js`, `data.js`)</td></tr>
+        <tr><td>Install &amp; offline</td><td>PWA: manifests per department, network-first service worker, add-to-home-screen icons; installed in under a minute, no app store</td></tr>
+        <tr><td>Database</td><td>Google Cloud Firestore (document DB) via the Firebase compat SDK; real-time listeners; per-document sync; collections per module (see the data model page)</td></tr>
+        <tr><td>Server logic</td><td>Firebase Cloud Functions Gen 2 (europe-west1): `register` and `notify` for push (FCM); WhatsApp template fallback. Everything else runs client-side against Firestore rules</td></tr>
+        <tr><td>Hosting</td><td>GitHub Pages per property sub-domain (`brandon.hospro.co.uk`, `thebarnhotel.hospro.co.uk`); one e2-micro Google Cloud VM as the guest Wi-Fi relay</td></tr>
+        <tr><td>Integrations</td><td>Guestline (forecast export now; API agreed); UniFi hotspot API; Xero imports; rate-shopper and Mailchimp connecting; Playwright-rendered branded PDFs</td></tr>
+        <tr><td>Access</td><td>App-level login (department → name → PIN), roles in `meta/access_config` and `hospro_app/users`; Firestore rules per collection (open for shared operational collections today)</td></tr>
+        <tr><td>Second property</td><td>Same project, prefixed collections (`barn_*`), per-hotel config file (rooms, areas, teams, thresholds, branding); cloned and branded in a day</td></tr>
+      </table>
+    </div>
+    <div>
+      <h3 style="margin-top:0">Practices we hold to</h3>
+      <ul>
+        <li><b>Add, never break.</b> New modules sit beside working ones; old apps stay as fallbacks until the new one is proven (HosFIX standalone is still there behind the one-app version).</li>
+        <li><b>Change files, not folders.</b> Only the files that changed are uploaded; two people never deploy from different local copies (we learned this the hard way on 1 November).</li>
+        <li><b>Operational data is immutable.</b> Corrections are new records; nothing is deleted in `hosfix_jobs` (rules block deletes).</li>
+        <li><b>Approvals and thresholds live in the data</b> (£50 gate, approvers, default fixers), not in code, so each hotel configures its own.</li>
+        <li><b>Photos compressed on the phone;</b> large media kept out of the job document (`hosfix_photos`) so sync stays fast on hotel Wi-Fi.</li>
+        <li><b>Every change is render-tested</b> (syntax checks and a headless browser run for each role) before it is uploaded.</li>
+        <li><b>Clean-start cut-offs</b> when a module is rebuilt, so history is not polluted by test data.</li>
+      </ul>
+      <div class="card tint"><h4>Honest limits</h4><p>No real authentication yet (PINs, open rules on shared collections). No automated test suite beyond render checks. No CI/CD, no staging environment, no monitoring beyond Firebase's console. Single Firebase project shared by two hotels. These are exactly the items a partner platform solves first.</p></div>
+    </div>
+  </div>
+</article><div class="pager"><a class="btn" href="system-architecture-as-built.html">◀ System architecture as built</a><span class="note">Page 17 of 37 · Technology</span><a class="btn primary" href="what-it-takes-to-offer-this-as-a-commercial-tool-at-scale.html">What it takes to offer this as a commercial tool ▶</a></div></div></main><footer><div class="wrap"><span><b>HosPRO</b> · Hospitality Performance, Revenue &amp; Operations · hospro.co.uk</span><span>Prepared for Immediate Impact · November 2026 · Private &amp; confidential</span></div></footer>
+<div id="lightbox"></div>
+<script src="../assets/site.v4.js"></script>
+</body></html>

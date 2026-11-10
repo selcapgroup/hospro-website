@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Lifecycles: how a job and a room change state · HosPRO Entity</title>
+<link rel="icon" href="../img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.v4.css">
+</head>
+<body><header class="top"><div class="wrap"><a href="../index.html" class="logo"><img src="../img/logo.png" alt="HosPRO"></a><nav class="topnav"><a class="tab" href="../pages/executive-summary.html">Overview</a><a class="tab" href="../pages/independent-hotels-are-desperate-for-three-things.html">Opportunity</a><a class="tab" href="../pages/how-an-independent-hotel-actually-runs-today.html">Platform</a><a class="tab" href="../pages/one-action-everywhere-the-life-of-a-fault.html">Connected</a><a class="tab" href="../pages/where-the-efficiency-savings-and-profit-come-from.html">Business case</a><a class="tab on" href="../pages/system-architecture-as-built.html">Technology</a><a class="tab" href="../pages/hosrev-rate-recommendations-a-gm-can-trust.html">Revenue</a><a class="tab" href="../pages/where-we-are-an-honest-starting-point.html">AI</a><a class="tab" href="../pages/target-architecture-hospro-ada-engine.html">Partnership</a></nav><span class="lock">PRIVATE</span></div></header><div class="subnav"><div class="wrap"><span class="grp">Technology</span><a href="../pages/system-architecture-as-built.html" class="">System architecture as built</a><a href="../pages/what-exists-today-the-code-how-it-is-built-and-the-practices.html" class="">What exists today</a><a href="../pages/what-it-takes-to-offer-this-as-a-commercial-tool-at-scale.html" class="">What it takes to offer this as a commercial tool at scale</a><a href="../pages/technical-workflows-how-data-moves-syncs-and-alerts.html" class="">Technical workflows</a><a href="../pages/the-data-model-one-hotel-one-set-of-collections.html" class="">The data model</a><a href="../pages/lifecycles-how-a-job-and-a-room-change-state.html" class="on">Lifecycles</a></div></div><main><div class="wrap"><article class="sec pg on" id="pg-lifecycles-how-a-job-and-a-room-change-state"><div class="kicker">10 · Database design</div>
+  <h1>Lifecycles: how a job and a room change state <button class="aichip" data-ai="HosPRO·AI writes into these same state machines — a proposed job is still `not-started`, a proposed allocation is still `pending` — so approvals and audit are unchanged.">HosPRO·AI</button></h1>
+  <p>Two state machines carry most of the operational logic. They are deliberately small — a fixer never has to choose from twelve statuses — and every transition writes who, when and (where relevant) a photo.</p>
+  <div class="two">
+    <div>
+      <h3 style="margin-top:0"><span class="dept" style="background:var(--fix)"></span>Maintenance job (hosfix_jobs.status)</h3>
+      <div class="svgwrap">
+      <svg viewBox="0 0 360 300" font-family="Manrope, Aptos, Segoe UI, Arial, sans-serif" font-size="9.5">
+        <defs><marker id="a5" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#EA7A1E"/></marker></defs>
+        <g fill="#fff" stroke="#EA7A1E" stroke-width="1.5">
+          <rect x="110" y="14" width="140" height="34" rx="17"/><rect x="110" y="94" width="140" height="34" rx="17"/><rect x="200" y="174" width="150" height="34" rx="17"/><rect x="10" y="254" width="140" height="34" rx="17"/><rect x="200" y="254" width="150" height="34" rx="17"/>
+        </g>
+        <g font-weight="700" fill="#1F3864" text-anchor="middle">
+          <text x="180" y="35">not-started</text><text x="180" y="115">in-progress</text><text x="275" y="195">pending_approval</text><text x="80" y="275">complete</text><text x="275" y="275">cancelled</text>
+        </g>
+        <g stroke="#EA7A1E" stroke-width="1.6" fill="none" marker-end="url(#a5)">
+          <path d="M180 48 L180 94"/><path d="M200 128 L250 174"/><path d="M250 208 C 210 230, 150 230, 110 254"/><path d="M130 128 C 80 170, 80 200, 80 254"/><path d="M250 128 C 290 150, 300 200, 290 254"/><path d="M100 254 C 60 200, 100 120, 110 112" stroke-dasharray="4 3"/>
+        </g>
+        <g fill="#5b6b7a" font-size="8.5">
+          <text x="186" y="74">accept · timer · before photo</text><text x="232" y="150">cost &gt; £50</text><text x="118" y="236">manager approves</text><text x="8" y="200">after photo</text><text x="8" y="212">· notes</text><text x="300" y="235">manager</text><text x="30" y="128">reopen</text>
+        </g>
+        <text x="12" y="296" fill="#5b6b7a" font-size="8.5">sources: HosHOUSE · Reception · F&amp;B · Fire · Manager</text>
+      </svg></div>
+      <p class="note">Default assignees are set per hotel; the approval threshold and approvers are configuration, not code. Completion writes <span class="mono">maintStatus: complete</span> onto the room record so housekeeping sees "✓ Completed by maintenance".</p>
+    </div>
+    <div>
+      <h3 style="margin-top:0"><span class="dept" style="background:var(--hk)"></span>Room for the day (hoshouse_rooms.status)</h3>
+      <div class="svgwrap">
+      <svg viewBox="0 0 360 300" font-family="Manrope, Aptos, Segoe UI, Arial, sans-serif" font-size="9.5">
+        <defs><marker id="a6" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#2E6B5E"/></marker></defs>
+        <g fill="#fff" stroke="#2E6B5E" stroke-width="1.5">
+          <rect x="110" y="14" width="140" height="34" rx="17"/><rect x="110" y="94" width="140" height="34" rx="17"/><rect x="110" y="174" width="140" height="34" rx="17"/><rect x="10" y="94" width="80" height="34" rx="17"/><rect x="110" y="254" width="140" height="34" rx="17"/>
+        </g>
+        <g font-weight="700" fill="#1F3864" text-anchor="middle">
+          <text x="180" y="35">pending</text><text x="180" y="115">in_progress</text><text x="180" y="195">done</text><text x="50" y="115">blocked</text><text x="180" y="275">done + fault</text>
+        </g>
+        <g stroke="#2E6B5E" stroke-width="1.6" fill="none" marker-end="url(#a6)">
+          <path d="M180 48 L180 94"/><path d="M180 128 L180 174"/><path d="M110 111 L90 111"/><path d="M50 94 C 50 60, 100 40, 110 36"/><path d="M180 208 L180 254"/>
+        </g>
+        <g fill="#5b6b7a" font-size="8.5">
+          <text x="186" y="74">start · photo checklist</text><text x="186" y="154">completion photos · sign-off</text><text x="20" y="150">DND / refused</text><text x="20" y="162">door photo</text><text x="186" y="234">raised a HosFIX job</text>
+          <text x="270" y="275">maintStatus:</text><text x="270" y="287">complete ✓</text>
+        </g>
+        <text x="12" y="296" fill="#5b6b7a" font-size="8.5">type: Departure · Stayover · Arrival-ready</text>
+      </svg></div>
+      <p class="note">Allocation happens before <span class="mono">pending</span>: the lead chooses auto (skill, rating, floor) or manual. Each transition stores start/finish timestamps, so room duration and rooms-per-hour are measured, not estimated.</p>
+    </div>
+  </div>
+  <h3>Access model</h3>
+  <div class="three">
+    <div class="card tint"><h4>Tiers</h4><p><b>Manager</b> (admin) — everything, approvals, reassign, reports. <b>Lead</b> — their department, can close incidents. <b>Fixer</b> — only jobs assigned to them. <b>Staff</b> — their department's modules and their own reports.</p></div>
+    <div class="card tint"><h4>Department → modules</b></h4><p>Housekeeping: HosHOUSE · Maintenance · Rota. Maintenance: Maintenance · Fire · Compliance · Rota. Reception: Reception · Housekeeping board · Maintenance · Fire · Rota. F&amp;B: F&amp;B · Maintenance · Fire · Rota. Sales: Sales · Fire · Rota.</p></div>
+    <div class="card tint"><h4>Hardening (next)</h4><p>Today: app-level PIN login with open rules on shared collections, matching how the hotel operates. Next: Firebase Auth with role claims, per-collection rules, audit log — a natural fit for a partner platform with permissions and approvals built in.</p></div>
+  </div>
+  </article><div class="pager"><a class="btn" href="the-data-model-one-hotel-one-set-of-collections.html">◀ The data model: one hotel, one set of collection</a><span class="note">Page 21 of 37 · Technology</span><a class="btn primary" href="maintenance-the-fastest-money-a-hotel-can-save.html">Maintenance: the fastest money a hotel can save ▶</a></div></div></main><footer><div class="wrap"><span><b>HosPRO</b> · Hospitality Performance, Revenue &amp; Operations · hospro.co.uk</span><span>Prepared for Immediate Impact · November 2026 · Private &amp; confidential</span></div></footer>
+<div id="lightbox"></div>
+<script src="../assets/site.v4.js"></script>
+</body></html>

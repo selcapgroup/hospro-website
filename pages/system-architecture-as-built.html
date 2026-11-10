@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>System architecture as built · HosPRO Entity</title>
+<link rel="icon" href="../img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.v4.css">
+</head>
+<body><header class="top"><div class="wrap"><a href="../index.html" class="logo"><img src="../img/logo.png" alt="HosPRO"></a><nav class="topnav"><a class="tab" href="../pages/executive-summary.html">Overview</a><a class="tab" href="../pages/independent-hotels-are-desperate-for-three-things.html">Opportunity</a><a class="tab" href="../pages/how-an-independent-hotel-actually-runs-today.html">Platform</a><a class="tab" href="../pages/one-action-everywhere-the-life-of-a-fault.html">Connected</a><a class="tab" href="../pages/where-the-efficiency-savings-and-profit-come-from.html">Business case</a><a class="tab on" href="../pages/system-architecture-as-built.html">Technology</a><a class="tab" href="../pages/hosrev-rate-recommendations-a-gm-can-trust.html">Revenue</a><a class="tab" href="../pages/where-we-are-an-honest-starting-point.html">AI</a><a class="tab" href="../pages/target-architecture-hospro-ada-engine.html">Partnership</a></nav><span class="lock">PRIVATE</span></div></header><div class="subnav"><div class="wrap"><span class="grp">Technology</span><a href="../pages/system-architecture-as-built.html" class="on">System architecture as built</a><a href="../pages/what-exists-today-the-code-how-it-is-built-and-the-practices.html" class="">What exists today</a><a href="../pages/what-it-takes-to-offer-this-as-a-commercial-tool-at-scale.html" class="">What it takes to offer this as a commercial tool at scale</a><a href="../pages/technical-workflows-how-data-moves-syncs-and-alerts.html" class="">Technical workflows</a><a href="../pages/the-data-model-one-hotel-one-set-of-collections.html" class="">The data model</a><a href="../pages/lifecycles-how-a-job-and-a-room-change-state.html" class="">Lifecycles</a></div></div><main><div class="wrap"><article class="sec pg on" id="pg-system-architecture-as-built"><div class="kicker">9 · Technical architecture</div>
+  <h1>System architecture as built</h1>
+  <p>Deliberately simple: static web apps on GitHub Pages, a managed document database, a handful of cloud functions and one small VM. No servers to patch, no framework lock-in, and a monthly running cost in the tens of pounds. Simple enough to clone for a new hotel in a day; structured enough to carry an AI layer.</p>
+  <div class="svgwrap">
+  <svg viewBox="0 0 760 450" font-family="Manrope, Aptos, Segoe UI, Arial, sans-serif" font-size="9.8">
+    <defs><marker id="a4" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#1F3864"/></marker></defs>
+    <!-- Layer labels -->
+    <g font-size="9" font-weight="700" fill="#4DA69C" letter-spacing="1.5">
+      <text x="10" y="30">DEVICES</text><text x="10" y="130">APPLICATIONS (PWA · GitHub Pages)</text><text x="10" y="240">PLATFORM (Google Cloud · project brandonhall-7bdef)</text><text x="10" y="360">INTEGRATIONS</text>
+    </g>
+    <!-- Devices -->
+    <g>
+      <rect x="10" y="38" width="130" height="60" rx="8" fill="#eef2f6" stroke="#c7d0da"/><text x="75" y="60" text-anchor="middle" font-weight="700" fill="#1F3864">Staff phones</text><text x="75" y="75" text-anchor="middle">iOS / Android · installed PWA</text><text x="75" y="88" text-anchor="middle">name + PIN · 14-day session</text>
+      <rect x="155" y="38" width="130" height="60" rx="8" fill="#eef2f6" stroke="#c7d0da"/><text x="220" y="60" text-anchor="middle" font-weight="700" fill="#1F3864">Manager desktop</text><text x="220" y="75" text-anchor="middle">portal · dashboards</text><text x="220" y="88" text-anchor="middle">reports · P&amp;L</text>
+      <rect x="300" y="38" width="130" height="60" rx="8" fill="#eef2f6" stroke="#c7d0da"/><text x="365" y="60" text-anchor="middle" font-weight="700" fill="#1F3864">Wall boards</text><text x="365" y="75" text-anchor="middle">HosDESK board mode</text><text x="365" y="88" text-anchor="middle">reception · back office</text>
+      <rect x="445" y="38" width="130" height="60" rx="8" fill="#eef2f6" stroke="#c7d0da"/><text x="510" y="60" text-anchor="middle" font-weight="700" fill="#1F3864">Guest phones</text><text x="510" y="75" text-anchor="middle">Wi-Fi captive portal</text><text x="510" y="88" text-anchor="middle">public fault-report link</text>
+      <rect x="590" y="38" width="160" height="60" rx="8" fill="#eef2f6" stroke="#c7d0da"/><text x="670" y="60" text-anchor="middle" font-weight="700" fill="#1F3864">QR posters</text><text x="670" y="75" text-anchor="middle">staff clock-in · room reports</text><text x="670" y="88" text-anchor="middle">no hardware</text>
+    </g>
+    <!-- Apps -->
+    <g>
+      <rect x="10" y="138" width="230" height="78" rx="8" fill="#e8eaf4" stroke="#4f5b9a"/><text x="125" y="158" text-anchor="middle" font-weight="700" fill="#1F3864">HosPRO Mobile · app.html</text><text x="125" y="173" text-anchor="middle">core.js router + mod-house · mod-fix · mod-rec</text><text x="125" y="186" text-anchor="middle">mod-fb · mod-sales · mod-misc · mod-manage</text><text x="125" y="202" text-anchor="middle" fill="#5b6b7a">service worker · manifests per department</text>
+      <rect x="255" y="138" width="230" height="78" rx="8" fill="#e8eaf4" stroke="#4f5b9a"/><text x="370" y="158" text-anchor="middle" font-weight="700" fill="#1F3864">Desktop portal · index.html</text><text x="370" y="173" text-anchor="middle">app.js · data.js · module landings</text><text x="370" y="186" text-anchor="middle">HosSALES · HosPEOPLE · HosMARKETING · HosREV</text><text x="370" y="202" text-anchor="middle" fill="#5b6b7a">P&amp;L dashboard · HosFIRE · wifi-db · guest-map</text>
+      <rect x="500" y="138" width="250" height="78" rx="8" fill="#e8eaf4" stroke="#4f5b9a"/><text x="625" y="158" text-anchor="middle" font-weight="700" fill="#1F3864">Standalone &amp; per-property apps</text><text x="625" y="173" text-anchor="middle">hoshouse.html · hosmain.html · hosfire-mobile</text><text x="625" y="186" text-anchor="middle">thebarnhotel.hospro.co.uk (HosDESK + HosFIX)</text><text x="625" y="202" text-anchor="middle" fill="#5b6b7a">kept as fallbacks — "add, never break"</text>
+    </g>
+    <!-- Platform -->
+    <g>
+      <rect x="10" y="248" width="300" height="92" rx="8" fill="#e2f1ee" stroke="#2E6B5E"/><text x="160" y="268" text-anchor="middle" font-weight="700" fill="#1F3864">Cloud Firestore (document DB)</text><text x="160" y="284" text-anchor="middle">hoshouse_* · hosfix_* · hosrec_* · fb_* · enquiries</text><text x="160" y="298" text-anchor="middle">wifi_signups · sp_rota · hospro_public · meta/*</text><text x="160" y="312" text-anchor="middle">barn_* (second property, same project)</text><text x="160" y="328" text-anchor="middle" fill="#5b6b7a">real-time listeners · per-doc sync · rules per collection</text>
+      <rect x="325" y="248" width="200" height="92" rx="8" fill="#e2f1ee" stroke="#2E6B5E"/><text x="425" y="268" text-anchor="middle" font-weight="700" fill="#1F3864">Cloud Functions (Gen 2)</text><text x="425" y="284" text-anchor="middle">register · notify (FCM push)</text><text x="425" y="298" text-anchor="middle">europe-west1</text><text x="425" y="314" text-anchor="middle">+ WhatsApp notify fallback</text><text x="425" y="328" text-anchor="middle" fill="#5b6b7a">data-only pushes · "test my alerts"</text>
+      <rect x="540" y="248" width="210" height="92" rx="8" fill="#e2f1ee" stroke="#2E6B5E"/><text x="645" y="268" text-anchor="middle" font-weight="700" fill="#1F3864">Wi-Fi relay VM</text><text x="645" y="284" text-anchor="middle">e2-micro · static IP · python stdlib</text><text x="645" y="298" text-anchor="middle">captive-portal redirect → branded page</text><text x="645" y="314" text-anchor="middle">→ UniFi API authorise 72 h</text><text x="645" y="328" text-anchor="middle" fill="#5b6b7a">≈ £8/month</text>
+    </g>
+    <!-- Integrations -->
+    <g>
+      <rect x="10" y="368" width="175" height="62" rx="8" fill="#fff" stroke="#c7d0da"/><text x="97" y="388" text-anchor="middle" font-weight="700" fill="#1F3864">Guestline / Rezlynx</text><text x="97" y="403" text-anchor="middle">Report Data · Event Archive · SOAP</text><text x="97" y="418" text-anchor="middle" fill="#997300">forecast now · live API next</text>
+      <rect x="200" y="368" width="165" height="62" rx="8" fill="#fff" stroke="#c7d0da"/><text x="282" y="388" text-anchor="middle" font-weight="700" fill="#1F3864">UniFi (UDM Pro)</text><text x="282" y="403" text-anchor="middle">guest Wi-Fi hotspot · 50 APs</text><text x="282" y="418" text-anchor="middle" fill="#2E6B5E">live</text>
+      <rect x="380" y="368" width="165" height="62" rx="8" fill="#fff" stroke="#c7d0da"/><text x="462" y="388" text-anchor="middle" font-weight="700" fill="#1F3864">Xero</text><text x="462" y="403" text-anchor="middle">suppliers · payroll · P&amp;L source</text><text x="462" y="418" text-anchor="middle" fill="#2E6B5E">import</text>
+      <rect x="560" y="368" width="190" height="62" rx="8" fill="#fff" stroke="#c7d0da"/><text x="655" y="388" text-anchor="middle" font-weight="700" fill="#1F3864">Rate shopper · Mailchimp · Buffer</text><text x="655" y="403" text-anchor="middle">comp-set rates · newsletters · social</text><text x="655" y="418" text-anchor="middle" fill="#997300">connecting</text>
+    </g>
+    <!-- vertical connectors -->
+    <g stroke="#1F3864" stroke-width="1.5" fill="none" marker-end="url(#a4)">
+      <path d="M125 98 L125 138"/><path d="M220 98 L300 138"/><path d="M365 98 L365 138"/><path d="M510 98 L600 138"/>
+      <path d="M125 216 L125 248"/><path d="M370 216 L250 248"/><path d="M625 216 L300 258"/><path d="M425 216 L425 248"/>
+      <path d="M97 340 L97 368"/><path d="M282 340 L282 368"/><path d="M462 340 L462 368"/><path d="M645 340 L645 368"/>
+    </g>
+  </svg></div>
+  <div class="cap">Figure 7 · Four layers: devices → applications → platform → integrations</div>
+  </article><div class="pager"><a class="btn" href="where-the-efficiency-savings-and-profit-come-from.html">◀ Where the efficiency, savings and profit come fr</a><span class="note">Page 16 of 37 · Technology</span><a class="btn primary" href="what-exists-today-the-code-how-it-is-built-and-the-practices.html">What exists today: the code, how it is built, an ▶</a></div></div></main><footer><div class="wrap"><span><b>HosPRO</b> · Hospitality Performance, Revenue &amp; Operations · hospro.co.uk</span><span>Prepared for Immediate Impact · November 2026 · Private &amp; confidential</span></div></footer>
+<div id="lightbox"></div>
+<script src="../assets/site.v4.js"></script>
+</body></html>
