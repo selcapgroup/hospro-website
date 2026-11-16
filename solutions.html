@@ -3,13 +3,50 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>How We Make Hotels More Profitable — HOSPRO</title>
-<meta name="description" content="How HOSPRO makes hotels more profitable: growing revenue and margin, keeping every space running, finding savings in spend and bringing practical AI into the hotel.">
-<meta property="og:title" content="How We Make Hotels More Profitable — HOSPRO">
-<meta property="og:description" content="How HOSPRO makes hotels more profitable: growing revenue and margin, keeping every space running, finding savings in spend and bringing practical AI into the hotel.">
-<meta property="og:site_name" content="HOSPRO">
+<meta name="description" content="Operations, compliance, people, F&amp;B margin, revenue, events and marketing — six ways HOSPRO makes independent hotels run better and earn more, delivered by hoteliers.">
+<meta property="og:title" content="How We Make Hotels More Profitable — HOSPRO"><meta property="og:description" content="Operations, compliance, people, F&amp;B margin, revenue, events and marketing — six ways HOSPRO makes independent hotels run better and earn more, delivered by hoteliers."><meta property="og:site_name" content="HOSPRO">
+<link rel="icon" href="mark-colour.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
+<style>
+.mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.mod{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 22px 20px;display:flex;flex-direction:column;gap:8px;transition:.18s;position:relative}
+.mod:hover{border-color:var(--teal);box-shadow:0 14px 40px rgba(20,35,47,.08);transform:translateY(-2px)}
+.mod .sw{width:40px;height:6px;border-radius:3px;margin-bottom:6px}
+.mod h3{font-size:19px;font-weight:800;color:var(--navy)}
+.mod h3 small{display:block;font-size:12.5px;font-weight:600;color:var(--slate);margin-top:2px}
+.mod p{font-size:14.5px;color:var(--slate)}
+.mod .more{margin-top:auto;font-weight:700;color:var(--teal-dk);font-size:14px}
+.mod .st{position:absolute;top:18px;right:18px;font-size:10.5px;font-weight:800;letter-spacing:.06em;padding:3px 9px;border-radius:999px;background:var(--wash);color:var(--teal-dk)}
+.mod .st.soon{background:#fdf0e4;color:#b85c0c}
+.group-h{display:flex;align-items:center;gap:12px;margin:46px 0 18px}
+.group-h h3{font-size:22px;font-weight:800;color:var(--navy)}
+.group-h span{font-size:14px;color:var(--slate)}
+.kv{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.kv .card h3{font-size:17px}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:stretch}
+.flow .step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 16px;position:relative}
+.flow .step b{display:block;font-size:15px;color:var(--navy);margin-bottom:6px}
+.flow .step span{font-size:13.5px;color:var(--slate)}
+.flow .step::after{content:"→";position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:var(--teal);font-weight:800;font-size:18px}
+.flow .step:last-child::after{content:""}
+.hd{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hd img{border-radius:16px;box-shadow:0 20px 50px rgba(20,35,47,.14);width:100%;object-fit:cover}
+.crumb{font-size:13.5px;color:var(--slate);margin-bottom:12px}
+.crumb a{color:var(--teal-dk);font-weight:600}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.quote{border-left:4px solid var(--teal);padding:14px 20px;background:var(--wash);border-radius:0 12px 12px 0;font-size:17px;color:var(--navy);font-style:italic}
+.badge-row{display:flex;flex-wrap:wrap;gap:8px}
+.badge-row span{font-size:12.5px;font-weight:700;background:var(--wash);color:var(--teal-dk);padding:5px 11px;border-radius:20px}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.shots figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.shots img{width:100%;height:230px;object-fit:cover;object-position:top}
+.shots figcaption{padding:10px 14px;font-size:13.5px;color:var(--slate)}
+@media(max-width:1000px){.mod-grid,.kv{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:1fr}.flow .step::after{content:""}}
+@media(max-width:700px){.mod-grid,.kv,.hd,.two-col,.shots{grid-template-columns:1fr}}
+
+</style>
 </head>
 <body>
 <header><div class="wrap"><nav>
@@ -20,39 +57,38 @@
 
 <section class="page-hero"><div class="wrap">
   <div class="eyebrow">Solutions</div>
-  <h1>Four ways HOSPRO makes hotels more profitable.</h1>
-  <p>Commercial growth, operational efficiency, maintenance discipline and smarter procurement — joined up, measured, delivered by experienced hoteliers and made smarter with AI.</p>
+  <h1>Six ways HOSPRO makes a hotel run better and earn more.</h1>
+  <p>Hotels tell us the same three things within five minutes: maintenance costs too much and takes too long, rates are set blind against the competition, and there is never enough business through the door. We built the platform around those — then the rest of the hotel followed.</p>
 </div></section>
-
-<div class="wrap">
-  <div class="feat"><div><div class="tag">Commercial &amp; sales</div><h3>Grow revenue and protect margin.</h3><p>Turn every enquiry into an opportunity you can see, chase and win — and move corporate and repeat guests off commissionable channels onto direct rates.</p><ul><li>Live sales pipeline with traffic-light status</li><li>Corporate database &amp; direct-booking targets</li><li>Conversion and margin visible on every event</li></ul></div><div class="feat-media"><img src="hotel-lobby.jpg" alt="Commercial team" loading="lazy"></div></div>
-
-  <div class="feat"><div><div class="tag">Operations &amp; maintenance</div><h3>Keep every space sellable and running.</h3><p>Track room and venue readiness, plan maintenance before it becomes downtime, and give managers one view of what's ready, what's not and what's coming.</p><ul><li>Room &amp; venue readiness at a glance</li><li>Planned and reactive maintenance tracking</li><li>Asset &amp; AV upgrade management</li></ul></div><div class="feat-media"><img src="hotel-room.jpg" alt="Hotel operations" loading="lazy"></div></div>
-
-  <div class="feat"><div><div class="tag">Procurement &amp; cost savings</div><h3>Find the margin hiding in your spend.</h3><p>HOSPRO brings supplier and spend data together and lets AI flag where costs have crept up — so you renegotiate, consolidate and save without cutting quality.</p><ul><li>Supplier &amp; spend consolidation</li><li>AI-flagged cost increases and anomalies</li><li>Procurement decisions backed by data</li></ul></div><div class="feat-media"><img src="hotel-tech.jpg" alt="Procurement analysis" loading="lazy"></div></div>
-
-  <div class="feat"><div><div class="tag">AI intelligence</div><h3>Bring intelligence into the hotel.</h3><p>Practical AI that reads your joined-up data and surfaces the decisions that matter — the account to chase, the cost to question, the report to run — before anyone has to ask.</p><ul><li>Opportunity &amp; risk flagged automatically</li><li>Management overview generated from your PMS</li><li>Content, proposals and comms drafted in seconds</li></ul></div><div class="feat-media"><img src="hotel-tech.jpg" alt="AI intelligence" loading="lazy"></div></div>
-</div>
-
-<section class="band"><div class="wrap">
-  <div class="sec-head center"><div class="eyebrow">The outcome</div><h2>Measurable in the places that matter.</h2></div>
-  <div class="stats">
-    <div class="stat"><div class="n">+9pts</div><div class="l">Event margin uplift</div></div>
-    <div class="stat"><div class="n">81%</div><div class="l">Revenue direct vs OTA</div></div>
-    <div class="stat"><div class="n">+44%</div><div class="l">Enquiry conversion</div></div>
-    <div class="stat"><div class="n">1 view</div><div class="l">Whole-hotel overview</div></div>
+<section style="padding-top:10px"><div class="wrap">
+  <div class="grid-2">
+    <div class="card"><div class="ic">🔧</div><h3>Maintenance that costs less</h3><p>The fastest money a hotel can save. A lost fault typically costs a goodwill gesture, a contractor call-out and three nights of a room out of order; the same fault in HosFIX costs a fixer's time and £12 of parts — and the record stops it happening again.</p><ul><li>Faults never lost; first response and fix time measured</li><li>Spend approved before it is spent; receipts at source</li><li>Repeat faults by room and asset; contractor vs in-house decisions on data</li></ul><a href="modules/hosfix.html" class="btn-ghost" style="padding-left:0">HosFIX →</a></div>
+    <div class="card"><div class="ic">📈</div><h3>Rates that beat the comp-set</h3><p>HosREV recommends a rate per room type per night from pick-up, competitor rates within 20 miles and local events — and, unlike any stand-alone RMS, knows which rooms are out of order and which are held for a conference. You approve with one tap.</p><ul><li>Daily recommendations with reasons</li><li>Guard-rails set by the hotel</li><li>ADR and RevPAR against plan</li></ul><a href="modules/hosrev.html" class="btn-ghost" style="padding-left:0">HosREV →</a></div>
+    <div class="card"><div class="ic">🎯</div><h3>More events and direct business</h3><p>Speed wins venue enquiries. HosEVENTS puts every enquiry in a pipeline with owners and follow-ups, builds quotes from your mapped venues and packages, and feeds booked events to the kitchen, the rooms and maintenance. HosMARKETING turns Wi-Fi sign-ups into a guest database you own.</p><ul><li>Enquiry to signed agreement in one place</li><li>Corporate database and direct-booking targets</li><li>Around 80 consented guest records a day from the Wi-Fi</li></ul><a href="modules/hosevents.html" class="btn-ghost" style="padding-left:0">HosEVENTS →</a></div>
+    <div class="card"><div class="ic">🍽️</div><h3>Food and beverage as a P&amp;L</h3><p>The chef costs dishes and menus with profit per dish; actual prices arrive from invoices; sales come from the till or the order pad; labour comes from the rota. The result is a daily F&amp;B P&amp;L — and month-end stock counts that make the accounts true.</p><ul><li>Profit per dish, per menu, per event</li><li>Bar stock take on a phone, variance at cost</li><li>Supplier price checks and anomalies</li></ul><a href="modules/hosfb.html" class="btn-ghost" style="padding-left:0">HosF&amp;B →</a></div>
+    <div class="card"><div class="ic">⏱️</div><h3>Labour you can see</h3><p>Rotas approved with coverage checked, hours clocked on the staff's own phones, payroll reconciled against what actually happened — and every member of staff with their own app for leave and holidays.</p><ul><li>Rota vs actual, lateness, on site now</li><li>Payroll flagged where hours differ</li><li>Clocked hours feed the P&amp;L</li></ul><a href="modules/hostime.html" class="btn-ghost" style="padding-left:0">HosTIME &amp; HosME →</a></div>
+    <div class="card"><div class="ic">🧯</div><h3>Compliance without the panic</h3><p>Fire tests, kitchen temperatures, cleaning schedules, COSHH training — recorded as they happen with names, signatures and limits enforced, so the inspector pack is already done when the inspector arrives.</p><ul><li>Fire, kitchen and housekeeping in one register</li><li>Online courses with certificates and renewals</li><li>Failed test or fridge out of range → maintenance job automatically</li></ul><a href="modules/hosfire.html" class="btn-ghost" style="padding-left:0">HosFIRE →</a></div>
   </div>
-  <p style="text-align:center;color:#8ea3ab;font-size:13px;margin-top:30px">Illustrative outcomes — actual results depend on your venue and starting point.</p>
 </div></section>
-
-<section class="final"><div class="wrap"><h2>Which of these matters most to you?</h2><p>Tell us your priority and we'll show you HOSPRO focused on it — commercial, operations, cost or all four.</p><a href="contact.html" class="btn-primary">Speak to HOSPRO</a></div></section>
-
+<section class="band"><div class="wrap">
+  <div class="sec-head center"><div class="eyebrow">The outcome</div><h2>Measurable in the places that matter.</h2><p>Illustrative annual impact for a 120-room independent hotel with spa, restaurant and events, across the levers above. Every hotel calibrates its own in the first 90 days.</p></div>
+  <div class="stats">
+    <div class="stat"><div class="n">£60k+</div><div class="l">revenue management uplift (+2–4% RevPAR)</div></div>
+    <div class="stat"><div class="n">£70k</div><div class="l">housekeeping and maintenance productivity</div></div>
+    <div class="stat"><div class="n">25 h</div><div class="l">of management admin removed each week</div></div>
+    <div class="stat"><div class="n">0</div><div class="l">faults lost in a chat</div></div>
+  </div>
+</div></section>
+<section><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">Practical AI</div><h2>Intelligence woven into the screens, not bolted on.</h2><p>HOSPRO's AI direction is simple: the system proposes, explains in one sentence a GM would say, and waits; a named person approves with one tap. Fault triage from a photo, rate recommendations with reasons, a drafted morning brief, an enquiry agent that answers in minutes, a compliance guardian that assembles the pack. Every one built on the operating data the platform already captures.</p></div>
+</div></section>
+<section class="final"><div class="wrap"><h2>See it working on your hotel.</h2><p>We set HOSPRO up with your rooms, teams and numbers — usually in a day — so you see the difference, not just hear about it.</p><a href="contact.html" class="btn-primary">Speak to HOSPRO</a></div></section>
 <footer><div class="wrap">
   <div class="foot-grid">
-    <div class="foot-brand"><img src="logo-white.svg" alt="HOSPRO"><p>360° hotel management, consultancy and technology. The professional experts in hospitality.</p></div>
-    <div class="foot-col"><h5>What we do</h5><a href="services.html">Management services</a><a href="consultancy.html">Consultancy</a><a href="training.html">Training</a><a href="platform.html">Platform &amp; AI</a><a href="solutions.html">Solutions</a><a href="integrations.html">Integrations</a></div>
-    <div class="foot-col"><h5>Company</h5><a href="customers.html">Clients</a><a href="case-study-brandon-hall.html">Client story: Brandon Hall</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="contact.html">Speak to HOSPRO</a></div>
-    <div class="foot-col"><h5>Get in touch</h5><a href="mailto:hello@hospro.co.uk">hello@hospro.co.uk</a><a href="#">17 Hanover Square<br>London W1S 1BN</a></div>
+    <div class="foot-brand"><img src="logo-white.svg" alt="HOSPRO"><p>360° hotel management, consultancy and technology. Designed by people who own and run hotels.</p></div>
+    <div class="foot-col"><h5>What we do</h5><a href="services.html">Management services</a><a href="consultancy.html">Consultancy</a><a href="training.html">Training</a><a href="platform.html">Platform &amp; modules</a><a href="solutions.html">Solutions</a><a href="integrations.html">Integrations</a></div>
+    <div class="foot-col"><h5>Platform</h5><a href="modules/hoshouse.html">HosHOUSE</a><a href="modules/hosfix.html">HosFIX</a><a href="modules/hosdesk.html">HosDESK</a><a href="modules/hosfire.html">HosFIRE</a><a href="modules/hostime.html">HosTIME &amp; HosME</a><a href="modules/hosfb.html">HosF&amp;B</a><a href="modules/hosrev.html">HosREV</a><a href="modules/hosevents.html">HosEVENTS</a></div>
+    <div class="foot-col"><h5>Company</h5><a href="customers.html">Clients</a><a href="case-study-brandon-hall.html">Client story: Brandon Hall</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="mailto:hello@hospro.co.uk">hello@hospro.co.uk</a></div>
   </div>
   <div class="foot-bottom"><div>HOSPRO · 17 Hanover Square, London W1S 1BN</div><div>© 2026 HOSPRO. All rights reserved.</div></div>
 </div></footer>

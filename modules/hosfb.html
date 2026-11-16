@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HosF&B — Kitchen, bar & restaurant P&L — HOSPRO</title>
+<meta name="description" content="From the chef&#x27;s costing sheet to the waiter&#x27;s order pad to the Xero invoice — food and beverage as one P&amp;L.">
+<meta property="og:title" content="HosF&B — Kitchen, bar & restaurant P&L — HOSPRO"><meta property="og:description" content="From the chef&#x27;s costing sheet to the waiter&#x27;s order pad to the Xero invoice — food and beverage as one P&amp;L."><meta property="og:site_name" content="HOSPRO">
+<link rel="icon" href="../mark-colour.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>
+.mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.mod{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 22px 20px;display:flex;flex-direction:column;gap:8px;transition:.18s;position:relative}
+.mod:hover{border-color:var(--teal);box-shadow:0 14px 40px rgba(20,35,47,.08);transform:translateY(-2px)}
+.mod .sw{width:40px;height:6px;border-radius:3px;margin-bottom:6px}
+.mod h3{font-size:19px;font-weight:800;color:var(--navy)}
+.mod h3 small{display:block;font-size:12.5px;font-weight:600;color:var(--slate);margin-top:2px}
+.mod p{font-size:14.5px;color:var(--slate)}
+.mod .more{margin-top:auto;font-weight:700;color:var(--teal-dk);font-size:14px}
+.mod .st{position:absolute;top:18px;right:18px;font-size:10.5px;font-weight:800;letter-spacing:.06em;padding:3px 9px;border-radius:999px;background:var(--wash);color:var(--teal-dk)}
+.mod .st.soon{background:#fdf0e4;color:#b85c0c}
+.group-h{display:flex;align-items:center;gap:12px;margin:46px 0 18px}
+.group-h h3{font-size:22px;font-weight:800;color:var(--navy)}
+.group-h span{font-size:14px;color:var(--slate)}
+.kv{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.kv .card h3{font-size:17px}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:stretch}
+.flow .step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 16px;position:relative}
+.flow .step b{display:block;font-size:15px;color:var(--navy);margin-bottom:6px}
+.flow .step span{font-size:13.5px;color:var(--slate)}
+.flow .step::after{content:"→";position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:var(--teal);font-weight:800;font-size:18px}
+.flow .step:last-child::after{content:""}
+.hd{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hd img{border-radius:16px;box-shadow:0 20px 50px rgba(20,35,47,.14);width:100%;object-fit:cover}
+.crumb{font-size:13.5px;color:var(--slate);margin-bottom:12px}
+.crumb a{color:var(--teal-dk);font-weight:600}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.quote{border-left:4px solid var(--teal);padding:14px 20px;background:var(--wash);border-radius:0 12px 12px 0;font-size:17px;color:var(--navy);font-style:italic}
+.badge-row{display:flex;flex-wrap:wrap;gap:8px}
+.badge-row span{font-size:12.5px;font-weight:700;background:var(--wash);color:var(--teal-dk);padding:5px 11px;border-radius:20px}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.shots figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.shots img{width:100%;height:230px;object-fit:cover;object-position:top}
+.shots figcaption{padding:10px 14px;font-size:13.5px;color:var(--slate)}
+@media(max-width:1000px){.mod-grid,.kv{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:1fr}.flow .step::after{content:""}}
+@media(max-width:700px){.mod-grid,.kv,.hd,.two-col,.shots{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <a href="../index.html" class="logo"><img src="../logo-full.svg" alt="HOSPRO"></a>
+  <button class="menu-toggle" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+  <div class="nav-links" id="navlinks"><a href="../services.html">Services</a><a href="../consultancy.html">Consultancy</a><a href="../training.html">Training</a><a href="../platform.html" class="on">Platform</a><a href="../solutions.html">Solutions</a><a href="../integrations.html">Integrations</a><a href="../customers.html">Clients</a><a href="../about.html">About</a><a href="../contact.html" class="nav-cta">Speak to HOSPRO</a></div>
+</nav></div></header>
+
+<section class="page-hero" style="padding-bottom:20px"><div class="wrap">
+  <div class="crumb"><a href="../platform.html">Platform</a> · Revenue & profit</div>
+  <div class="hd">
+    <div>
+      <div class="eyebrow">🍽️ HosF&B <span style="font-size:11px;font-weight:800;letter-spacing:.06em;padding:3px 9px;border-radius:999px;background:#fdf0e4;color:#b85c0c;vertical-align:middle;margin-left:8px">IN BUILD</span></div>
+      <h1>Kitchen, bar & restaurant P&L.</h1>
+      <p>From the chef's costing sheet to the waiter's order pad to the Xero invoice — food and beverage as one P&L.</p>
+      <p style="margin-top:14px;font-size:14.5px;color:var(--slate)"><b style="color:var(--navy)">Who uses it:</b> Head chef · restaurant and bar teams · finance · directors</p>
+    </div>
+    <img src="../cs-brandon-bar.jpg" alt="HosF&B" style="height:360px">
+  </div>
+</div></section>
+
+<section style="padding-top:20px"><div class="wrap">
+  <div class="two-col">
+    <div class="card"><div class="ic">✅</div><h3>What it does today</h3><ul><li>Ingredients and dishes costed per portion with allergens; chef's estimate until the first invoice lands</li><li>Menus with GP % per dish and profit per cover on set menus; event costing from existing or custom dishes</li><li>Table booking page with guest pre-order; waiters' order pad on a tablet; kitchen screen with tickets</li><li>Till import (Access EPoS) for sales; daily P&L = sales − food cost − labour from the rota</li><li>Bar stock list and stock take on a phone, variance valued at cost; supplier orders</li><li>Invoices read to update ingredient prices; Xero sales and bills</li></ul></div>
+    <div>
+      <div class="card" style="margin-bottom:18px"><div class="ic">🔭</div><h3>What is coming</h3><ul><li>Live Xero link and month-end stock counts into the accounts</li><li>HosChef: scan a product label for ingredients and allergens</li><li>AI menu engineering, prep forecasts and invoice reading at scale</li></ul></div>
+      <div class="card" style="background:var(--wash);border-color:transparent"><h3 style="font-size:17px">Part of one system</h3><p>HosF&B shares its database with every other HOSPRO module, so what happens here shows up where it matters — on the room, on the overview, in the daily report and in the numbers.</p><div class="badge-row" style="margin-top:12px"><span>HosREV</span><span>HosEVENTS</span><span>HosMARKETING</span></div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="wash" style="padding:56px 0"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">Also in Revenue & profit</div><h2 style="font-size:28px">Related modules</h2></div>
+  <div class="mod-grid"><a class="mod" href="../modules/hosrev.html"><span class="st soon">IN BUILD</span><div class="sw" style="background:#0f766e"></div><h3>📈 HosREV<small>Revenue management</small></h3><p>A recommended rate per room type per night — from pick-up, competitor rates within 20 miles and local events — approved by you with one tap.</p><span class="more">Explore HosREV →</span></a><a class="mod" href="../modules/hosevents.html"><span class="st">LIVE</span><div class="sw" style="background:#8a6d3b"></div><h3>🎯 HosEVENTS<small>Sales, enquiries & venues (HosSALES · HosVENUE)</small></h3><p>Every meeting, wedding and event enquiry from first contact to signed agreement — with your venues, packages and corporate accounts built in.</p><span class="more">Explore HosEVENTS →</span></a><a class="mod" href="../modules/hosmarketing.html"><span class="st">LIVE</span><div class="sw" style="background:#9C4F63"></div><h3>📣 HosMARKETING<small>Guest database, newsletters & brand</small></h3><p>Turn the guests already in your building into a marketing database you own — starting with the Wi-Fi.</p><span class="more">Explore HosMARKETING →</span></a></div>
+</div></section>
+<section class="final"><div class="wrap"><h2>See it working on your hotel.</h2><p>We set HOSPRO up with your rooms, teams and numbers — usually in a day — so you see the difference, not just hear about it.</p><a href="../contact.html" class="btn-primary">Speak to HOSPRO</a></div></section>
+<footer><div class="wrap">
+  <div class="foot-grid">
+    <div class="foot-brand"><img src="../logo-white.svg" alt="HOSPRO"><p>360° hotel management, consultancy and technology. Designed by people who own and run hotels.</p></div>
+    <div class="foot-col"><h5>What we do</h5><a href="../services.html">Management services</a><a href="../consultancy.html">Consultancy</a><a href="../training.html">Training</a><a href="../platform.html">Platform &amp; modules</a><a href="../solutions.html">Solutions</a><a href="../integrations.html">Integrations</a></div>
+    <div class="foot-col"><h5>Platform</h5><a href="../modules/hoshouse.html">HosHOUSE</a><a href="../modules/hosfix.html">HosFIX</a><a href="../modules/hosdesk.html">HosDESK</a><a href="../modules/hosfire.html">HosFIRE</a><a href="../modules/hostime.html">HosTIME &amp; HosME</a><a href="../modules/hosfb.html">HosF&amp;B</a><a href="../modules/hosrev.html">HosREV</a><a href="../modules/hosevents.html">HosEVENTS</a></div>
+    <div class="foot-col"><h5>Company</h5><a href="../customers.html">Clients</a><a href="../case-study-brandon-hall.html">Client story: Brandon Hall</a><a href="../about.html">About</a><a href="../contact.html">Contact</a><a href="mailto:hello@hospro.co.uk">hello@hospro.co.uk</a></div>
+  </div>
+  <div class="foot-bottom"><div>HOSPRO · 17 Hanover Square, London W1S 1BN</div><div>© 2026 HOSPRO. All rights reserved.</div></div>
+</div></footer>
+</body></html>
