@@ -3,78 +3,84 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Clients — HOSPRO</title>
-<meta name="description" content="Hotels that partner with HOSPRO for 360° management, consultancy and hotel technology — including Brandon Hall Hotel and Spa in Warwickshire.">
-<meta property="og:title" content="Clients — HOSPRO">
-<meta property="og:description" content="Hotels that partner with HOSPRO for 360° management, consultancy and hotel technology — including Brandon Hall Hotel and Spa in Warwickshire.">
-<meta property="og:site_name" content="HOSPRO">
+<meta name="description" content="Hotels running on HOSPRO: Brandon Hall Hotel and Spa and The Barn Hotel, Ruislip.">
+<meta property="og:title" content="Clients — HOSPRO"><meta property="og:description" content="Hotels running on HOSPRO: Brandon Hall Hotel and Spa and The Barn Hotel, Ruislip."><meta property="og:site_name" content="HOSPRO">
+<link rel="icon" href="mark-colour.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css"><meta property="og:image" content="https://hospro.co.uk/cs-brandon-exterior.jpg">
+<link rel="stylesheet" href="shared.css">
 <style>
-.cs-hero{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;padding:54px 0 40px}
-.cs-hero h1{font-size:46px;font-weight:800;letter-spacing:-1.5px;line-height:1.08;color:var(--navy)}
-.cs-hero p{font-size:18.5px;color:var(--slate);margin-top:18px}
-.cs-hero img{border-radius:18px;box-shadow:0 24px 60px rgba(20,35,47,.18);width:100%;height:440px;object-fit:cover}
-.eyebrow-t{color:var(--teal-dk);font-weight:700;font-size:15px;margin-bottom:12px}
-.chip{display:inline-block;background:var(--wash);color:var(--teal-dk);font-weight:700;font-size:12.5px;padding:5px 11px;border-radius:999px;margin:0 6px 6px 0}
-@media(max-width:920px){.cs-hero{grid-template-columns:1fr;gap:28px}.cs-hero h1{font-size:34px}.cs-hero img{height:300px}}
+.mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.mod{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 22px 20px;display:flex;flex-direction:column;gap:8px;transition:.18s;position:relative}
+.mod:hover{border-color:var(--teal);box-shadow:0 14px 40px rgba(20,35,47,.08);transform:translateY(-2px)}
+.mod .sw{width:40px;height:6px;border-radius:3px;margin-bottom:6px}
+.mod h3{font-size:19px;font-weight:800;color:var(--navy)}
+.mod h3 small{display:block;font-size:12.5px;font-weight:600;color:var(--slate);margin-top:2px}
+.mod p{font-size:14.5px;color:var(--slate)}
+.mod .more{margin-top:auto;font-weight:700;color:var(--teal-dk);font-size:14px}
+.mod .st{position:absolute;top:18px;right:18px;font-size:10.5px;font-weight:800;letter-spacing:.06em;padding:3px 9px;border-radius:999px;background:var(--wash);color:var(--teal-dk)}
+.mod .st.soon{background:#fdf0e4;color:#b85c0c}
+.group-h{display:flex;align-items:center;gap:12px;margin:46px 0 18px}
+.group-h h3{font-size:22px;font-weight:800;color:var(--navy)}
+.group-h span{font-size:14px;color:var(--slate)}
+.kv{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.kv .card h3{font-size:17px}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:stretch}
+.flow .step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 16px;position:relative}
+.flow .step b{display:block;font-size:15px;color:var(--navy);margin-bottom:6px}
+.flow .step span{font-size:13.5px;color:var(--slate)}
+.flow .step::after{content:"→";position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:var(--teal);font-weight:800;font-size:18px}
+.flow .step:last-child::after{content:""}
+.hd{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hd img{border-radius:16px;box-shadow:0 20px 50px rgba(20,35,47,.14);width:100%;object-fit:cover}
+.crumb{font-size:13.5px;color:var(--slate);margin-bottom:12px}
+.crumb a{color:var(--teal-dk);font-weight:600}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.quote{border-left:4px solid var(--teal);padding:14px 20px;background:var(--wash);border-radius:0 12px 12px 0;font-size:17px;color:var(--navy);font-style:italic}
+.badge-row{display:flex;flex-wrap:wrap;gap:8px}
+.badge-row span{font-size:12.5px;font-weight:700;background:var(--wash);color:var(--teal-dk);padding:5px 11px;border-radius:20px}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.shots figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.shots img{width:100%;height:230px;object-fit:cover;object-position:top}
+.shots figcaption{padding:10px 14px;font-size:13.5px;color:var(--slate)}
+@media(max-width:1000px){.mod-grid,.kv{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:1fr}.flow .step::after{content:""}}
+@media(max-width:700px){.mod-grid,.kv,.hd,.two-col,.shots{grid-template-columns:1fr}}
 
-.cs-card{display:grid;grid-template-columns:1fr 1.1fr;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.18s}
-.cs-card:hover{border-color:var(--teal);box-shadow:0 20px 50px rgba(20,35,47,.1)}
-.cs-card img{width:100%;height:100%;min-height:360px;object-fit:cover}
-.cs-card .body{padding:40px}
-.cs-card h3{font-size:30px;font-weight:800;color:var(--navy);letter-spacing:-.6px;line-height:1.15;margin:10px 0 12px}
-.cs-card p{color:var(--slate);font-size:16.5px}
-.cs-card .more{display:inline-block;margin-top:22px;font-weight:800;color:var(--teal-dk)}
-.cs-card:hover .more{color:var(--navy)}
-.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
-.mini div{background:var(--paper);border-radius:12px;padding:14px}
-.mini b{display:block;font-size:24px;color:var(--navy);font-weight:800;line-height:1.1}
-.mini span{font-size:12.5px;color:var(--slate)}
-@media(max-width:920px){.cs-card{grid-template-columns:1fr}.cs-card img{min-height:240px}.cs-card .body{padding:26px}.mini{grid-template-columns:1fr 1fr 1fr}}
 </style>
 </head>
 <body>
 <header><div class="wrap"><nav>
   <a href="index.html" class="logo"><img src="logo-full.svg" alt="HOSPRO"></a>
   <button class="menu-toggle" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
-  <div class="nav-links" id="navlinks"><a href="services.html">Services</a><a href="consultancy.html">Consultancy</a><a href="training.html">Training</a><a href="platform.html">Platform &amp; AI</a><a href="solutions.html">Solutions</a><a href="integrations.html">Integrations</a><a href="customers.html" class="on">Clients</a><a href="about.html">About</a><a href="contact.html" class="nav-cta">Speak to HOSPRO</a></div>
+  <div class="nav-links" id="navlinks"><a href="services.html">Services</a><a href="consultancy.html">Consultancy</a><a href="training.html">Training</a><a href="platform.html">Platform</a><a href="solutions.html">Solutions</a><a href="integrations.html">Integrations</a><a href="customers.html" class="on">Clients</a><a href="about.html">About</a><a href="contact.html" class="nav-cta">Speak to HOSPRO</a></div>
 </nav></div></header>
-<div class="wrap"><div class="page-hero">
-  <div class="eyebrow">Customers</div>
-  <h1>Hotels that partner with HOSPRO.</h1>
-  <p>Independent hotels use HOSPRO to bring enquiries, quotes, events, rooms, maintenance and stock into one place, so their teams spend less time chasing paperwork and more time with guests.</p>
-</div></div>
 
-<section style="padding-top:20px"><div class="wrap">
-  <a class="cs-card" href="case-study-brandon-hall.html">
-    <img src="cs-brandon-exterior.jpg" alt="Brandon Hall Hotel and Spa, a white country house across a wide lawn" loading="lazy">
-    <div class="body">
-      <span class="chip">Case study</span><span class="chip">Country house hotel</span><span class="chip">Warwickshire</span>
-      <h3>Brandon Hall Hotel and Spa: from first enquiry to signed agreement in one place</h3>
-      <p>How a Warwickshire country house hotel with 14 event spaces moved its events sales, room data, maintenance planning and bar stock onto HOSPRO.</p>
-      <div class="mini"><div><b>17</b><span>function rooms audited and mapped</span></div><div><b>6</b><span>pipeline stages, enquiry to confirmed</span></div><div><b>117</b><span>bar products tracked on iPad</span></div></div>
-      <span class="more">Read the case study →</span>
-    </div>
-  </a>
+<section class="page-hero"><div class="wrap">
+  <div class="eyebrow">Clients</div>
+  <h1>Hotels that run on HOSPRO.</h1>
+  <p>Independent hotels use HOSPRO to bring housekeeping, maintenance, reception, compliance, rotas, F&amp;B, events and marketing into one place — so teams spend less time chasing and more time with guests, and owners see the whole hotel on one screen.</p>
 </div></section>
-
-<section class="wash"><div class="wrap">
-  <div class="sec-head center"><div class="eyebrow">Working with HOSPRO</div><h2>What a HOSPRO rollout looks like.</h2><p>We don't hand over a login and walk away. Every hotel gets the platform set up around its own rooms, packages and team.</p></div>
-  <div class="grid-3">
-    <div class="card"><div class="ic">🏨</div><h3>Your venue, mapped</h3><p>Every room, capacity, layout and piece of kit loaded properly, so sales, operations and your website all work from the same facts.</p></div>
-    <div class="card"><div class="ic">🧭</div><h3>Your way of selling</h3><p>Packages, rates, menus and terms built in, with branded proposals and agreements that look like your hotel, not ours.</p></div>
-    <div class="card"><div class="ic">🤝</div><h3>Your team, trained</h3><p>Hands-on training for events, reception and management, with practical tools like iPad apps for the people on the floor.</p></div>
+<section style="padding-top:10px"><div class="wrap">
+  <div class="grid-2">
+    <div class="card"><img src="cs-brandon-exterior.jpg" alt="Brandon Hall Hotel and Spa" style="border-radius:12px;height:220px;width:100%;object-fit:cover;margin-bottom:18px"><div class="eyebrow" style="color:var(--teal-dk);font-weight:700;font-size:14px;margin-bottom:8px">Country house hotel &amp; spa · Warwickshire · 120 bedrooms</div><h3>Brandon Hall Hotel and Spa</h3><p>The whole hotel on HOSPRO: housekeeping, maintenance, reception, fire and kitchen compliance, time and attendance for 52 staff, events sales, guest Wi-Fi marketing, F&amp;B costing, P&amp;L and cost dashboards.</p><ul><li>12 modules, one app, one database</li><li>~80 consented guest records a day from the Wi-Fi</li><li>Inspector-ready fire and kitchen records</li></ul><a href="case-study-brandon-hall.html" class="btn-ghost" style="padding-left:0;margin-top:10px">Read the client story →</a></div>
+    <div class="card"><img src="hotel-exterior.jpg" alt="The Barn Hotel" style="border-radius:12px;height:220px;width:100%;object-fit:cover;margin-bottom:18px"><div class="eyebrow" style="color:var(--teal-dk);font-weight:700;font-size:14px;margin-bottom:8px">Hotel · Ruislip, West London · 70 bedrooms, 4 buildings</div><h3>The Barn Hotel</h3><p>HosDESK and HosFIX for reception and maintenance: deliveries and faults logged at the desk, jobs allocated by the manager, worked by the operative with photos and timings — cloned and branded from Brandon Hall in a single day.</p><ul><li>Live at thebarnhotel.hospro.co.uk</li><li>Own rooms, areas, work types and team</li><li>Same platform, separate data</li></ul></div>
   </div>
 </div></section>
-
-<section class="final"><div class="wrap"><h2>Could your hotel be next?</h2><p>We'd love to show you what HOSPRO did for Brandon Hall Hotel and Spa, and what it could do for you.</p><a href="contact.html" class="btn-primary">Speak to HOSPRO</a></div></section>
+<section class="wash"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">Working with HOSPRO</div><h2>What a rollout looks like.</h2><p>We don't hand over a login and walk away. Every hotel gets the platform set up around its own rooms, teams and way of working — usually in a day — and training delivered by people who have done the jobs.</p></div>
+  <div class="grid-3">
+    <div class="card"><div class="ic">🏨</div><h3>Your hotel, mapped</h3><p>Rooms, areas, function spaces, teams, fixers, thresholds and branding loaded from a short form.</p></div>
+    <div class="card"><div class="ic">📱</div><h3>Your team, installed</h3><p>Posters and personal links; each person adds the app to their phone in under a minute. No app store.</p></div>
+    <div class="card"><div class="ic">🤝</div><h3>Your team, trained</h3><p>Hands-on sessions by department, online courses with certificates, and a 90-day measure of what changed.</p></div>
+  </div>
+</div></section>
+<section class="final"><div class="wrap"><h2>See it working on your hotel.</h2><p>We set HOSPRO up with your rooms, teams and numbers — usually in a day — so you see the difference, not just hear about it.</p><a href="contact.html" class="btn-primary">Speak to HOSPRO</a></div></section>
 <footer><div class="wrap">
   <div class="foot-grid">
-    <div class="foot-brand"><img src="logo-white.svg" alt="HOSPRO"><p>360° hotel management, consultancy and technology. The professional experts in hospitality.</p></div>
-    <div class="foot-col"><h5>What we do</h5><a href="services.html">Management services</a><a href="consultancy.html">Consultancy</a><a href="training.html">Training</a><a href="platform.html">Platform &amp; AI</a><a href="solutions.html">Solutions</a><a href="integrations.html">Integrations</a></div>
-    <div class="foot-col"><h5>Company</h5><a href="customers.html">Clients</a><a href="case-study-brandon-hall.html">Client story: Brandon Hall</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="contact.html">Speak to HOSPRO</a></div>
-    <div class="foot-col"><h5>Get in touch</h5><a href="mailto:hello@hospro.co.uk">hello@hospro.co.uk</a><a href="#">17 Hanover Square<br>London W1S 1BN</a></div>
+    <div class="foot-brand"><img src="logo-white.svg" alt="HOSPRO"><p>360° hotel management, consultancy and technology. Designed by people who own and run hotels.</p></div>
+    <div class="foot-col"><h5>What we do</h5><a href="services.html">Management services</a><a href="consultancy.html">Consultancy</a><a href="training.html">Training</a><a href="platform.html">Platform &amp; modules</a><a href="solutions.html">Solutions</a><a href="integrations.html">Integrations</a></div>
+    <div class="foot-col"><h5>Platform</h5><a href="modules/hoshouse.html">HosHOUSE</a><a href="modules/hosfix.html">HosFIX</a><a href="modules/hosdesk.html">HosDESK</a><a href="modules/hosfire.html">HosFIRE</a><a href="modules/hostime.html">HosTIME &amp; HosME</a><a href="modules/hosfb.html">HosF&amp;B</a><a href="modules/hosrev.html">HosREV</a><a href="modules/hosevents.html">HosEVENTS</a></div>
+    <div class="foot-col"><h5>Company</h5><a href="customers.html">Clients</a><a href="case-study-brandon-hall.html">Client story: Brandon Hall</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="mailto:hello@hospro.co.uk">hello@hospro.co.uk</a></div>
   </div>
   <div class="foot-bottom"><div>HOSPRO · 17 Hanover Square, London W1S 1BN</div><div>© 2026 HOSPRO. All rights reserved.</div></div>
 </div></footer>

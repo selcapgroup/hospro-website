@@ -3,170 +3,80 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Client Story: Brandon Hall Hotel and Spa — HOSPRO</title>
-<meta name="description" content="How HOSPRO helped Brandon Hall Hotel and Spa, a Warwickshire country house hotel, bring events sales, venue information, maintenance planning and bar stock together in one place.">
-<meta property="og:title" content="Client Story: Brandon Hall Hotel and Spa — HOSPRO">
-<meta property="og:description" content="How HOSPRO helped Brandon Hall Hotel and Spa, a Warwickshire country house hotel, bring events sales, venue information, maintenance planning and bar stock together in one place.">
-<meta property="og:site_name" content="HOSPRO">
+<meta name="description" content="How a 120-bedroom Warwickshire country house hotel and spa moved its whole operation onto HOSPRO — housekeeping, maintenance, reception, compliance, rotas, events, marketing and F&amp;B.">
+<meta property="og:title" content="Client Story: Brandon Hall Hotel and Spa — HOSPRO"><meta property="og:description" content="How a 120-bedroom Warwickshire country house hotel and spa moved its whole operation onto HOSPRO — housekeeping, maintenance, reception, compliance, rotas, events, marketing and F&amp;B."><meta property="og:site_name" content="HOSPRO">
+<link rel="icon" href="mark-colour.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css"><meta property="og:image" content="https://hospro.co.uk/cs-brandon-exterior.jpg">
+<link rel="stylesheet" href="shared.css">
 <style>
-.cs-hero{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;padding:54px 0 40px}
-.cs-hero h1{font-size:46px;font-weight:800;letter-spacing:-1.5px;line-height:1.08;color:var(--navy)}
-.cs-hero p{font-size:18.5px;color:var(--slate);margin-top:18px}
-.cs-hero img{border-radius:18px;box-shadow:0 24px 60px rgba(20,35,47,.18);width:100%;height:440px;object-fit:cover}
-.eyebrow-t{color:var(--teal-dk);font-weight:700;font-size:15px;margin-bottom:12px}
-.chip{display:inline-block;background:var(--wash);color:var(--teal-dk);font-weight:700;font-size:12.5px;padding:5px 11px;border-radius:999px;margin:0 6px 6px 0}
-@media(max-width:920px){.cs-hero{grid-template-columns:1fr;gap:28px}.cs-hero h1{font-size:34px}.cs-hero img{height:300px}}
+.mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.mod{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 22px 20px;display:flex;flex-direction:column;gap:8px;transition:.18s;position:relative}
+.mod:hover{border-color:var(--teal);box-shadow:0 14px 40px rgba(20,35,47,.08);transform:translateY(-2px)}
+.mod .sw{width:40px;height:6px;border-radius:3px;margin-bottom:6px}
+.mod h3{font-size:19px;font-weight:800;color:var(--navy)}
+.mod h3 small{display:block;font-size:12.5px;font-weight:600;color:var(--slate);margin-top:2px}
+.mod p{font-size:14.5px;color:var(--slate)}
+.mod .more{margin-top:auto;font-weight:700;color:var(--teal-dk);font-size:14px}
+.mod .st{position:absolute;top:18px;right:18px;font-size:10.5px;font-weight:800;letter-spacing:.06em;padding:3px 9px;border-radius:999px;background:var(--wash);color:var(--teal-dk)}
+.mod .st.soon{background:#fdf0e4;color:#b85c0c}
+.group-h{display:flex;align-items:center;gap:12px;margin:46px 0 18px}
+.group-h h3{font-size:22px;font-weight:800;color:var(--navy)}
+.group-h span{font-size:14px;color:var(--slate)}
+.kv{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.kv .card h3{font-size:17px}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:stretch}
+.flow .step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 16px;position:relative}
+.flow .step b{display:block;font-size:15px;color:var(--navy);margin-bottom:6px}
+.flow .step span{font-size:13.5px;color:var(--slate)}
+.flow .step::after{content:"→";position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:var(--teal);font-weight:800;font-size:18px}
+.flow .step:last-child::after{content:""}
+.hd{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hd img{border-radius:16px;box-shadow:0 20px 50px rgba(20,35,47,.14);width:100%;object-fit:cover}
+.crumb{font-size:13.5px;color:var(--slate);margin-bottom:12px}
+.crumb a{color:var(--teal-dk);font-weight:600}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.quote{border-left:4px solid var(--teal);padding:14px 20px;background:var(--wash);border-radius:0 12px 12px 0;font-size:17px;color:var(--navy);font-style:italic}
+.badge-row{display:flex;flex-wrap:wrap;gap:8px}
+.badge-row span{font-size:12.5px;font-weight:700;background:var(--wash);color:var(--teal-dk);padding:5px 11px;border-radius:20px}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.shots figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.shots img{width:100%;height:230px;object-fit:cover;object-position:top}
+.shots figcaption{padding:10px 14px;font-size:13.5px;color:var(--slate)}
+@media(max-width:1000px){.mod-grid,.kv{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:1fr}.flow .step::after{content:""}}
+@media(max-width:700px){.mod-grid,.kv,.hd,.two-col,.shots{grid-template-columns:1fr}}
 
-.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.facts div{padding:22px 24px}.facts div+div{border-left:1px solid var(--line)}
-.facts span{display:block;font-size:12.5px;font-weight:700;color:var(--slate);text-transform:uppercase;letter-spacing:.5px}
-.facts b{display:block;font-size:17px;color:var(--navy);margin-top:6px}
-.prose{max-width:760px}.prose p{font-size:17.5px;color:var(--slate);margin-top:14px}
-.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;counter-reset:s}
-.flow div{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:18px 16px;position:relative}
-.flow div::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--teal);color:#fff;font-weight:800;font-size:13px;margin-bottom:10px}
-.flow b{display:block;font-size:15.5px}.flow span{display:block;font-size:13px;color:#a8bcc4;margin-top:6px}
-.mods{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.mod{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px}
-.mod .tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.4px;color:var(--teal-dk);background:var(--wash);padding:4px 10px;border-radius:999px;margin-bottom:12px}
-.mod h3{font-size:21px;font-weight:800;color:var(--navy);margin-bottom:8px}
-.mod p{color:var(--slate);font-size:15px}
-.mod ul{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:8px}
-.mod li{display:flex;gap:9px;font-size:14.5px}.mod li::before{content:"✓";color:var(--teal);font-weight:800;flex-shrink:0}
-.showcase{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center}
-.showcase img{width:100%;border-radius:16px;border:1px solid var(--line);background:#fff;box-shadow:0 20px 50px rgba(20,35,47,.1)}
-.showcase h3{font-size:28px;font-weight:800;color:var(--navy);letter-spacing:-.6px}
-.showcase p{color:var(--slate);font-size:16.5px;margin-top:12px}
-table.data td:nth-child(2){color:var(--slate)}
-table.data td:nth-child(3){color:var(--ink)}
-table.data td:nth-child(3)::before{content:"✓ ";color:var(--teal);font-weight:800}
-.pics{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px}
-.pics img{width:100%;height:260px;object-fit:cover;border-radius:14px}
-.facts>div{min-width:0;overflow-wrap:anywhere}
-@media(max-width:920px){.facts{grid-template-columns:1fr 1fr}.facts div:nth-child(3){border-left:0}.facts div:nth-child(n+3){border-top:1px solid var(--line)}.flow{grid-template-columns:1fr 1fr}.mods,.showcase{grid-template-columns:1fr}.pics{grid-template-columns:1fr 1fr}.pics img:first-child{grid-column:1/-1}}
-@media(max-width:560px){.facts{grid-template-columns:1fr!important}.facts div+div{border-left:0!important;border-top:1px solid var(--line)}.flow,.pics{grid-template-columns:1fr!important}}
 </style>
 </head>
 <body>
 <header><div class="wrap"><nav>
   <a href="index.html" class="logo"><img src="logo-full.svg" alt="HOSPRO"></a>
   <button class="menu-toggle" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
-  <div class="nav-links" id="navlinks"><a href="services.html">Services</a><a href="consultancy.html">Consultancy</a><a href="training.html">Training</a><a href="platform.html">Platform &amp; AI</a><a href="solutions.html">Solutions</a><a href="integrations.html">Integrations</a><a href="customers.html" class="on">Clients</a><a href="about.html">About</a><a href="contact.html" class="nav-cta">Speak to HOSPRO</a></div>
+  <div class="nav-links" id="navlinks"><a href="services.html">Services</a><a href="consultancy.html">Consultancy</a><a href="training.html">Training</a><a href="platform.html">Platform</a><a href="solutions.html">Solutions</a><a href="integrations.html">Integrations</a><a href="customers.html" class="on">Clients</a><a href="about.html">About</a><a href="contact.html" class="nav-cta">Speak to HOSPRO</a></div>
 </nav></div></header>
-<div class="wrap"><div class="cs-hero">
-  <div>
-    <div class="eyebrow-t">Case study · Brandon Hall Hotel and Spa</div>
-    <h1>One platform, from first enquiry to signed agreement.</h1>
-    <p>Brandon Hall Hotel and Spa is a country house hotel in 17 acres of Warwickshire gardens and woodland, with 14 spaces for meetings, weddings and celebrations. HOSPRO now runs its events sales, venue data, maintenance planning and bar stock in one place.</p>
-    <div style="margin-top:22px"><span class="chip">SalesPRO</span><span class="chip">EventsPRO</span><span class="chip">StayCORP</span><span class="chip">AssetPRO</span></div>
-  </div>
-  <img src="cs-brandon-exterior.jpg" alt="Brandon Hall Hotel and Spa across its lawn under a blue sky">
-</div></div>
 
-<div class="wrap"><div class="facts">
-  <div><span>Hotel</span><b>Brandon Hall Hotel and Spa</b></div>
-  <div><span>Location</span><b>Brandon, near Coventry, Warwickshire</b></div>
-  <div><span>Venue</span><b>Country house hotel, 14 event spaces</b></div>
-  <div><span>Platform</span><b>HOSPRO, live at brandon.hospro.co.uk</b></div>
-</div></div>
-
-<section><div class="wrap">
-  <div class="grid-2" style="gap:56px;align-items:start">
-    <div class="prose">
-      <div class="eyebrow-t">The challenge</div>
-      <h2 style="font-size:34px;font-weight:800;letter-spacing:-1px;line-height:1.15;color:var(--navy)">Plenty of demand, too many places to keep track of it.</h2>
-      <p>Enquiries for meetings, weddings and celebrations reached the hotel from every direction: phone, email, the website and agents such as arrangeMY and Hitched. Each one needed details taking, a quote writing, follow-up and, eventually, a contract.</p>
-      <p>The information the team needed to do that well, from room capacities and technology to packages, rates and supplier requirements, lived in different documents, inboxes and people's heads. Behind the scenes, equipment and room condition weren't recorded in one place, and bar stock relied on periodic counts.</p>
-    </div>
-    <div class="prose">
-      <div class="eyebrow-t">The approach</div>
-      <h2 style="font-size:34px;font-weight:800;letter-spacing:-1px;line-height:1.15;color:var(--navy)">Build the hotel into HOSPRO first.</h2>
-      <p>We started with the venue itself: every function room measured, its capacities recorded for every layout and its technology audited. That single set of facts now drives the sales tools, the proposals the client receives and the hotel's own website.</p>
-      <p>We then mapped the events team's real day, from the first enquiry through quote, acceptance, agreement and deposits to confirmation, and built HOSPRO around it, with practical tools for the bar and maintenance teams alongside.</p>
-    </div>
-  </div>
+<section class="page-hero"><div class="wrap">
+  <div class="eyebrow">Client story · Brandon Hall Hotel and Spa</div>
+  <h1>A whole hotel, running on one platform.</h1>
+  <p>Brandon Hall Hotel and Spa is a 120-bedroom country house hotel in 17 acres of Warwickshire gardens and woodland, with a spa, restaurant and 14 spaces for meetings, weddings and celebrations. It is where HOSPRO was designed, tested and rebuilt — by the people who run it.</p>
+  <div class="badge-row" style="margin-top:22px"><span>HosHOUSE</span><span>HosFIX</span><span>HosDESK</span><span>HosFIRE</span><span>HosTIME &amp; HosME</span><span>HosEVENTS</span><span>HosMARKETING</span><span>HosF&amp;B</span><span>HosREV</span><span>P&amp;L &amp; costs</span></div>
 </div></section>
-
-<section class="band"><div class="wrap">
-  <div class="sec-head"><div class="eyebrow">How an event booking flows now</div><h2>Every enquiry follows the same six steps.</h2><p>The whole team can see where each booking stands, and nothing sits forgotten in an inbox.</p></div>
-  <div class="flow">
-    <div><b>Enquiry</b><span>From the website planner, the Events Concierge chat, agents, phone or email</span></div>
-    <div><b>Quote issued</b><span>Built from packages and rates, with A/B options</span></div>
-    <div><b>Accepted</b><span>The client picks an option and accepts online</span></div>
-    <div><b>Agreement sent</b><span>The event agreement goes out digitally</span></div>
-    <div><b>Client signed</b><span>Signed online, with deposits and instalments scheduled</span></div>
-    <div><b>Confirmed</b><span>Handed to operations with every detail in place</span></div>
-  </div>
+<section style="padding-top:10px"><div class="wrap">
+  <div class="feat"><div><div class="tag">The challenge</div><h3>Plenty of demand, too many places to keep track of it.</h3><p>Enquiries arrived from every direction and were quoted by hand. Maintenance ran on WhatsApp, so faults were lost and rooms sold broken. Housekeeping worked from a printout. Fire checks lived on a clipboard, kitchen checks on paper forms. Payroll was run on the rota, not on hours worked. The owners saw the month, never the day.</p></div><div class="feat-media"><img src="cs-brandon-reception.jpg" alt="Reception"></div></div>
+  <div class="feat"><div><div class="tag">The approach</div><h3>Operations first, then everything else.</h3><p>We started on the floor. Housekeeping moved onto phones with photo checklists; faults began flowing into HosFIX with timers, photos and a £50 approval gate; reception got a wall board for requests, deliveries and incidents. Only when those were in daily use did we add fire and kitchen compliance, time and attendance for 52 staff, the events pipeline, the Wi-Fi guest database, F&amp;B costing and the dashboards — each one sharing the same database.</p><ul><li>Every function room measured, capacities per layout, technology audited</li><li>The head chef's seven paper forms digitised word-for-word</li><li>Posters and personal links; the app installed from a link in under a minute</li></ul></div><div class="feat-media"><img src="cs-brandon-events.jpg" alt="Events"></div></div>
+  <div class="feat"><div><div class="tag">What changed</div><h3>Measured, not guessed.</h3><ul><li>Room times, first-response and fix times, cost per job — captured as a by-product of the work</li><li>No WhatsApp group for maintenance; completed jobs show on the room in housekeeping</li><li>Around 80 consented guest records a day from the Wi-Fi from day one</li><li>Fire, kitchen and housekeeping records inspector-ready at any moment</li><li>Rota vs clocked hours reconciled before payroll</li><li>The cost dashboard surfaced over-priced kegs, overlapping wholesalers, a duplicate posting and a £26k stock-adjustment gap in its first week</li><li>A one-page Daily Operations Report for the owners every night, compiled by nobody</li></ul></div><div class="feat-media"><img src="cs-brandon-bar.jpg" alt="Bar"></div></div>
 </div></section>
-
-<section><div class="wrap">
-  <div class="sec-head"><div class="eyebrow">What we built</div><h2>HOSPRO at Brandon Hall Hotel and Spa.</h2></div>
-  <div class="mods">
-    <div class="mod"><span class="tag">SalesPRO</span><h3>Enquiries and pipeline</h3><p>Every enquiry lands in one dashboard with the full brief, and moves through the pipeline to confirmation.</p>
-      <ul><li>Enquiries from the hotel website's event planner go straight in, complete with room, layout and requirements</li><li>Events Concierge chat, a friendly guided conversation that turns a website visitor into a complete brief</li><li>Budget, accommodation needs and source channel captured on every enquiry</li><li>Deposit, second deposit, instalment and balance tracking</li></ul></div>
-    <div class="mod"><span class="tag">SalesPRO</span><h3>Quotes and proposals</h3><p>Quotes built in minutes from the hotel's own packages, and sent as proposals that look like the hotel.</p>
-      <ul><li>Day delegate and 24-hour packages, accommodation blocks on bed and breakfast or dinner, bed and breakfast, à la carte catering and custom lines</li><li>A and B options when a client wants a choice</li><li>Branded proposal with a to-scale seating plan and an event carbon estimate</li><li>Online acceptance with option selection, an automatic two-week hold, and online agreement signing</li></ul></div>
-    <div class="mod"><span class="tag">EventsPRO</span><h3>Venue data and seating plans</h3><p>One accurate record of every space, used everywhere the hotel sells.</p>
-      <ul><li>17 function rooms with measurements, capacities for theatre, cabaret, boardroom, U-shape and reception, and in-room technology</li><li>Seating plans drawn to each room's real dimensions</li><li>Supplier fact sheets with insurance and PAT compliance checks</li><li>A beverage management dashboard with stock value, weekly usage and CSV export</li></ul></div>
-    <div class="mod"><span class="tag">StayCORP</span><h3>Groups and guests</h3><p>The tools that make residential events and weddings easier to run.</p>
-      <ul><li>Group Room Configurator: enter adults, children and babies and HOSPRO allocates them across room types, with extra beds, sofa beds and cots</li><li>Printable, branded allocation sheet</li><li>Guest pre check-in link, building the hotel's own guest database</li><li>Post-stay feedback page</li></ul></div>
-    <div class="mod"><span class="tag">AssetPRO</span><h3>Maintenance and investment</h3><p>A clear, costed picture of what each room needs before money is spent.</p>
-      <ul><li>Equipment and condition audit of every function room</li><li>Costed upgrade plan with editable prices and quantities</li><li>Budget approval sheet for the COO and per-room job sheets for the maintenance team</li><li>Excel export with purchase links for ordering</li></ul></div>
-    <div class="mod"><span class="tag">iPad app</span><h3>Bar stock on the floor</h3><p>A simple iPad app for the bar team, set up from the hotel's stock take.</p>
-      <ul><li>PIN login for staff</li><li>117 products loaded, with low and out-of-stock filters</li><li>Record usage and deliveries as they happen</li><li>Re-order in one tap, emailed to the general manager</li></ul></div>
-  </div>
+<section class="band"><div class="wrap"><div class="quote" style="background:rgba(255,255,255,.06);color:#fff;border-color:var(--teal)">"Common sense first, technology second. The system has to make the person on the floor faster, not slower — or it is not a system, it is admin."</div><p style="color:#a8bcc4;margin-top:14px;font-size:14.5px">The HOSPRO operating principle, written at Brandon Hall.</p></div></section>
+<section><div class="wrap"><div class="sec-head center"><div class="eyebrow">Gallery</div><h2>Brandon Hall Hotel and Spa</h2></div>
+  <div class="shots"><figure><img src="cs-brandon-exterior.jpg" alt=""><figcaption>The hall and grounds</figcaption></figure><figure><img src="cs-brandon-banquet.jpg" alt=""><figcaption>Banqueting</figcaption></figure><figure><img src="cs-brandon-seating-plan.jpg" alt=""><figcaption>To-scale seating plans from the mapped venues</figcaption></figure></div>
 </div></section>
-
-<section class="wash"><div class="wrap showcase">
-  <img src="cs-brandon-seating-plan.jpg" alt="A to-scale seating plan of the Woodlands Suite set cabaret style for 160 guests" loading="lazy">
-  <div>
-    <div class="eyebrow-t">Seating plans, drawn to scale</div>
-    <h3>Clients see their event before they book it.</h3>
-    <p>Every function room at Brandon Hall Hotel and Spa is held in HOSPRO with its real measurements, so seating plans are drawn to scale for the layout and guest numbers the client asks for. This one shows the Woodlands Suite set cabaret style for 160 guests.</p>
-    <p>The same plans appear in HOSPRO proposals and in the event planner on the hotel's website, so what the client sees online, what the events team quotes and what operations set up all match.</p>
-  </div>
-</div></section>
-
-<section><div class="wrap">
-  <div class="sec-head"><div class="eyebrow">The difference</div><h2>How the work changed for the team.</h2><p>The biggest change isn't one feature. It's that each job now happens once, in one place, with the right information already there.</p></div>
-  <div class="tbl-wrap"><table class="data">
-    <thead><tr><th>Task</th><th>Before</th><th>With HOSPRO</th></tr></thead>
-    <tbody><tr><td>Taking an event enquiry</td><td>Details gathered over several calls and emails before a quote could even start</td><td>The full brief arrives in HOSPRO: event type, date, numbers, room, layout, catering, bedrooms, budget and source</td></tr><tr><td>Knowing which room fits</td><td>Capacities, sizes and technology held in people's heads and old documents</td><td>All 17 function rooms held once, with capacities for every layout, measurements, tech and to-scale seating plans</td></tr><tr><td>Writing a quote</td><td>Built from scratch in a document, with rates and packages re-typed each time</td><td>Packages, rates, bedrooms and catering picked from the builder, with A and B options when the client wants a choice</td></tr><tr><td>Sending the proposal</td><td>A plain attachment that had to be chased</td><td>A branded online proposal with the seating plan and carbon estimate; the client picks an option and accepts online</td></tr><tr><td>Getting it signed</td><td>Contracts printed, signed, scanned and emailed back</td><td>The agreement is sent and signed online, and the booking moves on through the pipeline</td></tr><tr><td>Allocating group bedrooms</td><td>Worked out by hand for each wedding or residential group</td><td>The Group Room Configurator allocates the party across room types, with extra beds and cots, and prints the allocation sheet</td></tr><tr><td>Planning maintenance spend</td><td>Room condition and equipment needs not recorded in one place</td><td>Every room audited, upgrades costed, a budget approval sheet for the COO, and per-room job sheets for the team</td></tr><tr><td>Managing bar stock</td><td>Counts taken at stock takes, with re-orders sent separately</td><td>Stock updated on an iPad as it's used or delivered, low and out-of-stock flagged, and re-orders emailed to the GM in one tap</td></tr></tbody>
-  </table></div>
-</div></section>
-
-<section class="band"><div class="wrap">
-  <div class="stats">
-    <div class="stat"><div class="n">17</div><div class="l">function rooms audited, measured and mapped</div></div>
-    <div class="stat"><div class="n">5</div><div class="l">seating layouts drawn to scale for every room</div></div>
-    <div class="stat"><div class="n">6</div><div class="l">pipeline stages from enquiry to confirmed</div></div>
-    <div class="stat"><div class="n">117</div><div class="l">bar products tracked live on iPad</div></div>
-  </div>
-</div></section>
-
-<section><div class="wrap">
-  <div class="sec-head"><div class="eyebrow">Beyond the platform</div><h2>Consultancy that joined it all up.</h2><p>Alongside HOSPRO, our consultancy team rebuilt the hotel's website and brand materials so that every channel works from the same information.</p></div>
-  <div class="grid-3">
-    <div class="card"><h3>A new hotel website</h3><p>A multi-page country house website with an event planner that sends complete enquiries straight into HOSPRO, online table booking for the restaurant and full menus.</p></div>
-    <div class="card"><h3>Brochures and menus</h3><p>Christmas, wedding, self-catering wedding and meetings brochures, plus the restaurant menus and wine lists, redesigned to the hotel's brand guide.</p></div>
-    <div class="card"><h3>Sales tools on the wall</h3><p>Posters, a reception display board and a looping wedding showcase for screens around the hotel.</p></div>
-  </div>
-  <div class="pics" style="margin-top:36px">
-    <img src="cs-brandon-events.jpg" alt="A function suite at Brandon Hall Hotel and Spa laid with round tables and flowers" loading="lazy">
-    <img src="cs-brandon-bar.jpg" alt="The bar and lounge at Brandon Hall Hotel and Spa" loading="lazy">
-    <img src="cs-brandon-banquet.jpg" alt="Banquet tables set for a celebration" loading="lazy">
-  </div>
-</div></section>
-
-<section class="final"><div class="wrap"><h2>See what HOSPRO could do for your hotel.</h2><p>We'll walk you through the Brandon Hall Hotel and Spa setup, and show how it would work with your rooms, packages and team.</p><a href="contact.html" class="btn-primary">Speak to HOSPRO</a> <a href="customers.html" class="btn-ghost">More customers</a></div></section>
+<section class="final"><div class="wrap"><h2>See it working on your hotel.</h2><p>We set HOSPRO up with your rooms, teams and numbers — usually in a day — so you see the difference, not just hear about it.</p><a href="contact.html" class="btn-primary">Speak to HOSPRO</a></div></section>
 <footer><div class="wrap">
   <div class="foot-grid">
-    <div class="foot-brand"><img src="logo-white.svg" alt="HOSPRO"><p>360° hotel management, consultancy and technology. The professional experts in hospitality.</p></div>
-    <div class="foot-col"><h5>What we do</h5><a href="services.html">Management services</a><a href="consultancy.html">Consultancy</a><a href="training.html">Training</a><a href="platform.html">Platform &amp; AI</a><a href="solutions.html">Solutions</a><a href="integrations.html">Integrations</a></div>
-    <div class="foot-col"><h5>Company</h5><a href="customers.html">Clients</a><a href="case-study-brandon-hall.html">Client story: Brandon Hall</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="contact.html">Speak to HOSPRO</a></div>
-    <div class="foot-col"><h5>Get in touch</h5><a href="mailto:hello@hospro.co.uk">hello@hospro.co.uk</a><a href="#">17 Hanover Square<br>London W1S 1BN</a></div>
+    <div class="foot-brand"><img src="logo-white.svg" alt="HOSPRO"><p>360° hotel management, consultancy and technology. Designed by people who own and run hotels.</p></div>
+    <div class="foot-col"><h5>What we do</h5><a href="services.html">Management services</a><a href="consultancy.html">Consultancy</a><a href="training.html">Training</a><a href="platform.html">Platform &amp; modules</a><a href="solutions.html">Solutions</a><a href="integrations.html">Integrations</a></div>
+    <div class="foot-col"><h5>Platform</h5><a href="modules/hoshouse.html">HosHOUSE</a><a href="modules/hosfix.html">HosFIX</a><a href="modules/hosdesk.html">HosDESK</a><a href="modules/hosfire.html">HosFIRE</a><a href="modules/hostime.html">HosTIME &amp; HosME</a><a href="modules/hosfb.html">HosF&amp;B</a><a href="modules/hosrev.html">HosREV</a><a href="modules/hosevents.html">HosEVENTS</a></div>
+    <div class="foot-col"><h5>Company</h5><a href="customers.html">Clients</a><a href="case-study-brandon-hall.html">Client story: Brandon Hall</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="mailto:hello@hospro.co.uk">hello@hospro.co.uk</a></div>
   </div>
   <div class="foot-bottom"><div>HOSPRO · 17 Hanover Square, London W1S 1BN</div><div>© 2026 HOSPRO. All rights reserved.</div></div>
 </div></footer>
