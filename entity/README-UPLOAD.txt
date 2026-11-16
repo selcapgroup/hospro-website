@@ -1,4 +1,4 @@
-HOSPRO / ENTITY — private JV prospectus, multi-page site (v4)
+HOSPRO / ENTITY — private JV prospectus, multi-page site (v5 — Nov 16 update: HosF&B, HosTIME/HosME, compliance, costs dashboard)
 =============================================================
 STRUCTURE
   entity/index.html          gate (code 3132) + home + contents
